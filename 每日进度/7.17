@@ -1,1 +1,10 @@
-
+一、复习完HTML 主要是表单域这一块
+二、结合 <teble> <input>  <select> <textarea> <ul>等标签实现注册页面
+三、注意点：1.超链接<a href="#"> </a>   空链接时，“#”勿忘
+           2.单选按钮(radio)和复选框(checkbox)默认选中，checked="checked"   
+           3.type="submit",默认值是提交，可通过value属性值更改，如:value="免费注册"
+           4.<textarea>可以通过cols和rows设置文本框的大小，但是不常用，一般通过CSS实现
+           5.单选按钮和复选框，需要设置name属性，同一级的单选按钮or复选框，需要设置相同的name值
+           6.<label>标签常与5结合使用，以增加用户体验，主要功能，实现点击<label>标签内的文字，即可聚焦到相应<input>标签，通过<input>标签内的id属性和<label>标签内的for属性实现，二者的值
+           必须相同
+           7.<select>实现下拉功能时，设置一个默认（放第一个option）显示,例如：--请选择年-- ，增加美感
