@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量语法拓展</title>
+    <script>
+        //同时声明多个变量   记得该加‘’的地方不要忘记
+        var age = 18,
+            name = 'bot',
+            email = '13423@sdf.com';
+        console.log(age);    
+        console.log(name);    
+        console.log(email);    
+        //声明变量的特殊情况
+        //只声明，不赋值，输出“undefined”,即未定义的
+        var sex;
+        console.log(sex);
+        //不声明，不赋值，直接使用,会报错
+        // console.log(flag);
+        //不声明，直接使用,可以这么做，但是不提倡，！！若不注释掉上面一行，会发现程序执行到上一行（报错）即停止，因为脚本语言逐行运行，遇错即停
+        body = 'text';
+        console.log(body);
+
+        // 变量声明有一定的规范性
+        // 只能由字母、数字、下划线、美元符号￥组成
+        // 不能以数字开头，如：var 18age,是错误的 var 1 也是错的
+        // 遵守驼峰命名法，myFirstNmae，即小写大写大写……
+        // name，尽量不使用name作为变量名，因为name在有些浏览器中有特殊的含义,如此处，既未声明也没复制，直接输出，打印'bot'
+        console.log(name);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

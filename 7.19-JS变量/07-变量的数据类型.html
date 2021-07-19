@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型</title>
+    <script>
+        var num = 10;  //数字型
+        //在js中，变量的数据类型，不用直接声明，而是在程序运行时，根据等号右边的值确定
+        var name = 'just';   //str 字符串型
+        //js是一种弱类型或者说是动态语言，相同的变量，数据类型可以变化
+        var x = 10;   //此刻为数字型
+            x = 'just';   //此刻为字符串型
+           
+
+        //数据类型：简单数据类型（Number,String,Boolean,Undefined,Null) 和 复杂数据类型（object）
+
+        //一、数字型
+        var num = 10;   //数字型包含了整数和小数
+        var PI = 3.14;    
+        //八进制，在数字前加上0 表示八进制
+        var num1 = 010;
+        console.log(num1);     //10 转化为十进制，就是8
+        //十六进制 0~9 a~f  数字前加上0x表示十六进制
+        var num3 = 0x9;      //还是9
+        console.log(num3);
+        var num4 = 0xa;
+        console.log(num4);   //转化为十进制10
+        //求数字型最大、小值
+        console.log(Number.MAX_VALUE);
+        console.log(Number.MIN_VALUE);
+        //数字型中的特殊值
+        console.log(Number.MAX_VALUE * 2);    //输出Infinity  表示无穷大
+        console.log(-Number.MAX_VALUE * 2);    //输出-Infinity  表示无穷小
+        console.log('bug' - 1);    //输出NaN  表示非数字
+        //isNaN()方法判断非数字 并且返回一个值，数字，返回false，非数字，返回true 
+        console.log(isNaN(12));
+        console.log(isNaN('asldfhlsd'));
+
+        //二、字符串型  单引号和双引号都可，建议用单引号  存在字符串嵌套时，采用 外双内单 or 外单内双
+        // var man =  '我是一个'帅气'的程序猿'     //就近原则，因此帅气二字没被''包括
+        var woman = '她是一位“漂亮”的\n富婆'      //这样写就不会报错了,\n表示换行，“\”转义字符，写在引号里
+        console.log(woman);
+        //检测字符串长度，length
+        var myName = 'my name is July';
+        console.log(myName.length);   //15
+        //字符串拼接，用'+'
+        console.log('我是' + '小可爱');
+        console.log('密码是' + '4646');
+        console.log(12 + 12);    //注意区别这两种,有字符串，拼接后就是字符串型
+        console.log('12' + '12');
+        console.log('12' + 12);
+        //字符串拼接加强
+        console.log(':你好丑！' + '你礼貌嘛？');
+        var word = '你好丑！';
+        console.log(':' + word + '你礼貌嘛？');   //采用这种替代的方式  快捷：引引加加  先输入原话'：你好丑！你礼貌嘛？'，将替代的地方用'++'代替，再将替代词放入++中间   ':'+word+'你礼貌嘛？'
+
+        //三、布尔型boolean  true(1)  false(0) 默认为false
+        var flag1 = true;
+        var flag2 = false;
+
+        //四、undefined  如果一个变量声明为赋值，就是undefined类型
+        var variable;    //也可手动 var variable = undefined;
+        console.log(variable + 'sdf');   //字符串拼接，只要包含一个字符串，拼接后就是字符串型
+        console.log(variable + 1);       //undefined + 数字后 为NaN（非数字）
+
+        //五、null
+        var space = null;
+        console.log(space + 'bug');    //这里两行，区别undefined   nullbug
+        console.log(space + 1);        // 1 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
