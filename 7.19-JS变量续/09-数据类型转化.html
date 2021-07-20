@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型转化</title>
+    <script>
+        //将数据类型转化为字符串型
+        var num = 10;
+        console.log(typeof num);
+        //1. 变量.toString()
+        console.log(typeof num.toString());
+        //2. String(变量) 
+        console.log(typeof String(num));
+        //3. 利用 + 拼接字符串的方法实现   隐式转换
+        console.log(typeof (num + ''));     //这里typeof后加了括号，是因为存在+,导致读取歧义
+
+        //字符型转化为数字型
+        //1.parseInt(变量) 转化为数字型 得到是整数
+        var age = prompt('请输入您的年龄：');
+        console.log(typeof parseInt(age));  
+        console.log(parseInt('3.02'));   //3
+        console.log(parseInt('3.95'));   //3 二者表明，只会取整
+        console.log(parseInt('120sdf'));  //120
+        console.log(parseInt('sdf4544sdf'));   //NaN  以数字开头的字符串，转化为数字型时，只取数字，若不是以数字开头，则显示NaN
+        //2.parseFloat(变量) 转化为数字型 得到的是小数/浮点数
+        console.log(parseFloat('3.15'));   //3.15
+        console.log(parseFloat('123dfg'));   //123
+        console.log(parseFloat('sdf134sdf'));   //NaN
+        //3.Number(变量)   强制转换
+        console.log(Number('234'));
+        //4.算数运算  - * /
+        console.log('12' - 0);
+        console.log('123' - '34');
+        console.log('234' * 1);
+        console.log('23' / 1);
+
+        //转化为布尔型boolean Boolean(变量)
+        //只有这五种（‘’ 0 null NaN undefined ）显示为false 其余全为true
+        console.log(Boolean(''));   //false
+        console.log(Boolean(0));    //false
+        console.log(Boolean(null)); //false
+        console.log(Boolean(NaN));  //false
+        console.log(Boolean(undefined));    //false
+        console.log('-------------');
+        console.log(Boolean('324'));    //true
+        console.log(Boolean('hello'));   //true
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
