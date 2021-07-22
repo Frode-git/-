@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>断点调试</title>
+    <script>
+        for (var i = 1; i <= 100; i++) {
+            console.log('调试');
+        }
+
+        // f12 点击sources选择相应的文件打开源码，点击左侧的行数，即可设置相应的断点，设置完断点，记得刷新一下页面
+        // 刷新后发现。var i = 1,1的背景高亮，说明，此时程序执行到这一步  右侧，箭头和点组成的图标表示程序运行顺序，点击向下的箭头，发现高亮的位置改变
+        // 同样是右侧，点击watch旁的+，输入i,即可随时观察i值的变化
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

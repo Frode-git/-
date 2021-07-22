@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打印</title>
+    <script>
+        // 一行打印
+        console.log('★★★★★'); // 若需要打印较多数量，这种比较麻烦
+        for (var i = 1; i <= 5; i++) {
+            console.log('★'); // 会发现，采用循环实现的话，控制台打印的是 数量5 ★   并不是★★★★★这种 
+        }
+
+        // 可采用字符串追加的方式
+        var str = '';
+        for (var i = 1; i <= 5; i++) {
+            str = str + '★';
+        }
+        console.log(str); // 此时符合我们预想的图案
+
+        // 打印五行五列
+        var str = ''; // 如果采用，将此处声明放到内循环，每行打印五个星星就换行，虽然也是五行五列的星星，但是显示上有一定问题（分的开）  如果采用此方法：每打印五个星星，追加一个字符\n,换行，最后发现同样是五行五列，这样显示的星星更紧凑
+        for (var i = 1; i <= 5; i++) {
+            for (var j = 1; j <= 5; j++) {
+                str = str + '★';
+            }
+            str += '\n';
+        }
+        console.log(str);
+
+        // 打印倒三角图案
+        var str = '';
+        for (var i = 1; i <= 10; i++) {
+            for (var j = i; j <= 10; j++) { // 注意，内循环是j = i起始！！
+                str += '★';
+            }
+            str += '\n';
+        }
+        console.log(str);
+
+        // 打印九九乘法表   列 × 行 = 结果
+        var str = '';
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) {
+                str += j + '×' + i + '=' + i * j + '\t';
+            }
+            str += '\n';
+        }
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

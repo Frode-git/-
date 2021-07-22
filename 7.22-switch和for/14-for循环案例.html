@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for循环案例</title>
+    <script>
+        // 求1~100所有数和的平均值
+        var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            sum += i;
+        }
+        console.log(sum / 100);
+        // 求1~100所有奇数、偶数的和
+        var even = 0; //偶数
+        var odd = 0; //奇数
+        for (var i = 1; i <= 100; i++) {
+            if (i % 2 == 0) {
+                even += i;
+            } else {
+                odd += i;
+            }
+        }
+        console.log('1~100之间的偶数和为：' + even);
+        console.log('1~100之间的奇数和为：' + odd);
+        //求1~100所有能被3整除的数的和
+        var result = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 == 0) {
+                result += i;
+            }
+        }
+        console.log(result);
+
+        // 求总成绩、平均成绩
+        var sum = 0;
+        var averge = 0;
+        var num = prompt('请输入班级人数：');
+        for (var i = 1; i <= num; i++) {
+            var score = prompt('请输入第' + i + '学生的成绩：');
+            sum += Number(score); // 因为从prompt取过来的数据是字符串型的，需要转化为数字型的
+        }
+        averge = sum / num;
+        alert('总成绩为：' + sum);
+        alert('平均成绩为：' + averge);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
