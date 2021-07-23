@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环练习</title>
+    <script>
+        // 1.接收用户输入的用户名和密码，若用户名为“admin”，密码为“123456”，则提示用户登录成功，否则，一直输入
+        // do {
+        //     var i = 1;
+        //     var name = prompt('请输入您的用户名：');
+        //     var pwd = prompt('请输入您的密码：');
+        //     if (name === 'admin' && pwd === '123456') {
+        //         alert('登录成功！');
+        //         i = 0;
+        //     } else {
+        //         alert('用户名或密码错误，请重新输入！');
+        //     }
+        // } while (i);
+
+        // 2.求1~100的累加值，但要跳过所有个位数为3的数，要求用continue实现
+        // var sum = 0;
+        // for (var i = 1; i <= 100; i++) {
+        //     if (i % 10 == 3) {
+        //         continue;
+        //     }
+        //     sum += i;
+        // }
+        // console.log(sum);
+
+        // 3.简易ATM   里面现存100元  如果存钱，弹出总余额  如果取钱，显示余额  显示余额  退出
+        var k = 1;
+        var balance = 100;
+        while (k) {
+            var num = prompt('请输入您要的操作:\n1.存钱\n2.取钱\n3.显示余额\n4.退出');
+            switch (num) {
+                case '1':
+                    var money = prompt('请输入存钱额度：');
+                    balance += parseFloat(money);
+                    alert('恭喜您，存钱成功！\n您当前的余额为：' + balance);
+                    break;
+                case '2':
+                    var money = prompt('请输入取钱额度：');
+                    if (parseFloat(money) > balance) {
+                        alert('余额不足，无法取钱！');
+                        break;
+                    }
+                    alert('恭喜您，取钱成功！\n您当前的余额为：' + balance);
+                    break;
+                case '3':
+                    alert('您当前的余额为：' + balance);
+                    break;
+                case '4':
+                    k = 0;
+                    alert('感谢您的使用！\n正在退出……');
+                    break;
+                default:
+                    alert('您输入的功能序号有误，请重新输入！');
+                    break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
