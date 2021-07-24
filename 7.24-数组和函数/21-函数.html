@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数</title>
+    <script>
+        // 声明函数  求1~100的和
+        function getSum() {
+            var sum = 0;
+            for (var i = 1; i <= 100; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+        // 调用函数
+        console.log(getSum());
+
+        // 求任意两个数之间数的和   
+        function getSums(start, end) {
+            var sum = 0;
+            for (var i = start; i <= end; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+        console.log(getSums(1, 10));
+
+        // 在js中，函数形参和实参个数可以不匹配，由形参个数决定  形参可以看成没定义的变量
+        function getSum2(num1, num2) {
+            return num1 + num2;
+        }
+        console.log(getSum2(1, 2)); // 3
+        console.log(getSum2(1, 2, 3)); // 3
+        console.log(getSum2(1)); //NaN  num2此时为没有接受值的变量，即undefined
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

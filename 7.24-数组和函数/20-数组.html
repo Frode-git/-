@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组</title>
+    <script>
+        // 1.利用new创建数组
+        var arr = new Array(); // 空数组   学到对象时会明白此处为何用new
+        // 2.利用数组字面量创建数组  更常用
+        var arr = []; // 空数组
+        var arr1 = [1, 2, '都可', true]; // 数组元素之间用逗号隔开，可以用不同类型的元素
+        console.log(arr1); // 直接log数组，发现不会输出所有元素，而是数组整体，元素全部输出，需要遍历
+        // 获取数组元素  数组名[索引]
+        console.log(arr1[2]);
+        console.log(arr1[4]); // 访问溢出，显示undefined
+
+        // 求数组长度，数组名.length函数
+        console.log(arr1.length);
+
+        // 求数组中的最大值
+        var arr2 = [2, 6, 1, 77, 52, 25, 1, 99];
+        var max = arr2[0];
+        for (var i = 1; i < arr2.length; i++) {
+            if (arr2[i] > max) {
+                max = arr2[i];
+            }
+        }
+        console.log(max);
+
+        // 将数组转化为字符串 元素之间用特殊符号隔开
+        var str = '';
+        var arr3 = ['red', 'blue', 'pink'];
+        var sep = '|';
+        for (var i = 0; i < arr3.length; i++) {
+            str += arr3[i] + sep;
+        }
+        console.log(str);
+
+        // 数组新增元素
+        // 1.修改length长度，进行扩容（追加）
+        console.log(arr3.length);
+        arr3.length = 5; // 把数组长度改为5，里面应该有五个元素  新增的元素没有赋值，默认为undefined
+        console.log(arr3);
+
+        // 2.修改索引号   更常用
+        var arr4 = ['red', 'blue'];
+        arr4[2] = 'pink';
+        console.log(arr4);
+
+        arr4 = '别这样哦';
+        console.log(arr4); // 这样做，会导致数组内容丢失，因为此时arr4不再为数组，而是字符串，因为js中，变量的数据类型可以改变
+
+        // 筛选数组 将数组中大于或等于十的数筛选出来，存放到新数组中
+        var arr5 = [2, 0, 5, 14, 23, 53, 4, 10];
+        var newArr = [];
+        var k = 0; // 这个地方的k也可用newArr.length，因为newArr.length起始值为0，由于length会自动检测元素的变化，因此不用length++  两种方法也就是新增元素的方法
+        for (var i = 0; i < arr5.length; i++) {
+            if (arr5[i] >= 10) {
+                newArr[k] = arr5[i];
+                k++;
+            }
+        }
+        console.log(newArr);
+
+        // 数组去重（删除指定元素）
+        var arr6 = [2, 0, 5, 2, 4, 0, 0, 234, 3];
+        var newArr2 = [];
+        for (var i = 0; i < arr6.length; i++) {
+            if (arr6[i] != 0) {
+                newArr2[newArr2.length] = arr6[i];
+            }
+        }
+        console.log(newArr2);
+
+        // 翻转数组
+        var arr7 = ['red', 'blue', 'pink', 'purple'];
+        var newArr3 = [];
+        for (var i = arr7.length - 1; i >= 0; i--) {
+            newArr3[newArr3.length] = arr7[i];
+        }
+        console.log(newArr3);
+
+        // 选择排序
+        var arr8 = [6, 4, 7, 1, 2];
+        var temp = 0;
+        for (var i = 0; i < arr8.length; i++) {
+            for (var k = i + 1; k < arr8.length; k++) {
+                if (arr8[i] > arr8[k]) {
+                    temp = arr8[i];
+                    arr8[i] = arr8[k];
+                    arr8[k] = temp;
+                }
+            }
+        }
+        console.log(arr8);
+
+        // 冒泡排序  外层循环：趟数，五个元素，四趟     内层循环：每趟的交换次数，第一趟，交换四次；第二趟，交换三次……
+        var arr9 = [1, 5, 3, 7, 4, 9, 10];
+        var temp = 0;
+        for (var i = 0; i < arr9.length - 1; i++) {
+            for (var j = 0; j < arr9.length - i - 1; j++) {
+                if (arr9[j] > arr9[j + 1]) {
+                    temp = arr9[j];
+                    arr9[j] = arr9[j + 1];
+                    arr9[j + 1] = temp;
+                }
+            }
+        }
+        console.log(arr9);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
