@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数练习</title>
+    <script>
+        // 简易计算器（+ - * /），并返回结果      该程序只做了部分优化，主要是应用函数解决问题  对于运算符问题，也可写在提示中，用数字序号代替
+        function calculator(num1, num2, op) {
+            num1 = parseFloat(num1);
+            num2 = parseFloat(num2);
+            var re = 0;
+            switch (op) {
+                case '+':
+                    re = num1 + num2;
+                    return re;
+                    break;
+                case '-':
+                    re = num1 - num2;
+                    return re;
+                    break;
+                case '*':
+                    re = num1 * num2;
+                    return re;
+                    break;
+                case '/':
+                    re = num1 / num2;
+                    return re;
+                    break;
+            }
+        }
+        var k = 1;
+        alert('欢迎使用本计算器！\n提示：本计算器目前只能计算+-*/功能');
+        while (k) {
+            var num1 = prompt('请输入操作数1:');
+            do {
+                var op = prompt('请输入运算符:');
+                var i = 0;
+                if (op != '+' && op != '-' && op != '*' && op != '/') {
+                    alert('运算符输入错误！请重新输入（只能输入+-*/)');
+                    i = 1;
+                }
+            } while (i);
+            var num2 = prompt('请输入操作数2:');
+            alert('结果为：' + calculator(num1, num2, op));
+            var question = prompt('是否继续使用，是，请输入1，否，请输入0！');
+            question > 0 ? k = 1 : k = 0;
+        }
+        alert('感谢使用！再见！');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

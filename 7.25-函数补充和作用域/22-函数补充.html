@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数补充</title>
+    <script>
+        // 函数声明的两种方式
+        // 1.利用函数关键字自定义函数（命名函数）
+        function fn() {
+
+        }
+        fn();
+
+        // 2.函数表达式（匿名函数，即函数没有表达式）
+        var fn = function() {
+
+        }
+        fn(); // 此处的fn为变量名，不是函数名，以变量名（）的方式调用
+
+        // 求两个数的最大值
+        function getSum(num1, num2) {
+            return num1 > num2 ? num1 : num2;
+        }
+        console.log(getSum(11, 3));
+
+        // 函数执行到return后就退出  return只能返回一个值，以最后一个为准
+        function fn(num1, num2) {
+            return num1, num2;
+        }
+        console.log(fn(6, 2)); // 2
+
+        // 若想返回多个值，可通过数组实现
+        function getResult(num1, num2) {
+            return [num1 + num2, num1 - num2, num1 * num2, num1 / num2];
+        }
+        console.log(getResult(2, 4));
+
+        // 如果函数有return，则返回return后的值，若果没有return，则返回undefined
+        function re() {}
+        console.log(re()); // 显示undefined
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作用域</title>
+    <script>
+        // js作用域：就是代码名字在某个范围内起作用和效果  目的是为了提高程序的可靠性 更重要的是减少命名冲突
+        // js作用域（主要是es6版本之前，es是ecsa的简称，js遵循ecsa规范)     全局作用域  局部作用域      在es6加了块级作用域
+        // 全局作用域： 整个script标签  或者一个单独的js文件
+        // 局部作用域： 在函数内部就是局部作用域  这个名字只能在函数内部起作用和效果
+
+        var num = 10; // 全局作用域  此时的num为全局变量，全局都可以使用
+
+        function fn() {
+            var num = 209; // 局部作用域，不会与上面的num冲突  
+            console.log(num); // 若注释上面一句，发现输出num为10，因为第一个num为全局变量
+            var num1 = 10;
+            num2 = 20;
+        }
+        fn();
+        // console.log(num1); // 发现此时会报错，因为num1为局部变量只能在函数内部使用
+        console.log(num2); // 此时虽然num2在函数内部定义，但是我们并未声明而直接赋值，此刻的num2仍为全局变量  -----特殊情况
+
+        // 从执行效率来看全局变量和局部变量
+        // (1) 全局变量只有在浏览器关闭的时候才会销毁，比较占内存
+        // (2) 局部变量 当我们的程序执行完毕就会销毁，比较节约内存
+
+        // 作用域链
+        // 根据函数可以调用函数   内部函数访问外部变量，采用的是链式查找来决定取哪个值（就近原则）
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
