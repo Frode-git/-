@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字体属性</title>
+    <style>
+        /* 字体属性包括：字体系列、大小、粗细和文本样式（如斜体） */
+        
+        h2 {
+            font-family: 'Microsoft Yahei';
+            /* 标题标签比较特殊，需要特殊指定字体大小 */
+            font-size: 20px;
+            /* 正常字体粗细，normal or 400 */
+            font-weight: normal;
+        }
+        
+        p {
+            /* 多个单词组成的字体类型，用‘’括起来，多个字体类型用逗号隔开，浏览器会从第一个字体开始，没有该字体，则移向下一个字体类型，都没有，则显示浏览器默认类型  */
+            font-family: 'Times New Roman', Times, serif;
+            /* 字体样式（斜体） */
+            font-style: italic;
+        }
+        
+        body {
+            /* 常见的几种字体 */
+            font-family: 'Microsoft Yahei', tahoma, arial, 'Hiragino Sans GB';
+            /* 给整个页面设置字体大小 */
+            font-size: 20px;
+        }
+        
+        .bold {
+            /* 粗体，建议通过数字设置（100-900），400为正常粗细，700等同bold，后面不跟单位 */
+            /* font-weight: bold; */
+            font-weight: 200;
+            /* normal 让斜体的文字变的不倾斜 */
+            font-style: normal;
+        }
+        
+        div {
+            /* 这样写比较麻烦，可以采用复合属性，从而减少代码 */
+            /* font-style: italic;
+            font-weight: 700;
+            font-size: 16px;
+            font-family: 'Microsoft Yahei'; */
+            /* 复合属性：简写的方式,这四种属性的顺序不能变更，即->样式->粗细->大小->字体*/
+            /* font: font-style font-weight font-size/line-height font-family; */
+            /* 有些属性可以省略，即默认，但是font-size 和font-family 不能省略，否则font属性不起作用 */
+            font: italic 700 16px 'Microsoft Yahei';
+        }
+    </style>
+</head>
+
+<body>
+    <h2>字体类型常用微软雅黑</h2>
+    <p class="bold">建议用英文表达，增加兼容性，如“Microsoft Yahei”</p>
+    <div>一心一意继肝</div>
+</body>
+
+</html>

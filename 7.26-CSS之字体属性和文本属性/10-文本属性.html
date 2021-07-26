@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本属性</title>
+    <style>
+        /* 文本属性可以定义文本的外观，比如文本的颜色、对齐文本、装饰文本（下划线、上划线、删除线等）、文本缩进、行间距等 */
+        
+        div {
+            /* color: pink; */
+            /* color: #ff0000; */
+            color: rgb(255, 0, 157);
+            /* 让盒子中的文字水平居中对齐；默认为左对齐 */
+            text-align: left;
+            text-decoration: underline;
+        }
+        
+        a {
+            /* 链接默认带下划线，可以此操作去掉 */
+            text-decoration: none;
+        }
+        
+        p {
+            /* 缩进两个字,也可以用px设置缩进效果 */
+            text-indent: 2em;
+            line-height: 20.2px;
+            /* 查看行间距，fsCapture工具 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>设置文本颜色有几种方式</div>
+    <div>可以用英文表达，也可以用十六进制表达,还有RGB，即red，green，blue</div>
+    <div>装饰文本text-decoration属性有四个值：none（不装饰，默认的）、underline（下划线）、line-through（删除线）、overline（上划线）</div>
+    <a href="#">取消链接下划线</a>
+    <p>缩进属性常用于段落第一行缩进，单位(em),就是当前元素一个文字大小（相对的） </p>
+    <p>行间距由上间距、文本高度、下间距组成，由于文本高度已定，故由上、下间距改变行间距</p>
+</body>
+
+</html>
