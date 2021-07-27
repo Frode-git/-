@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后代选择器</title>
+    <style>
+        /* 后代选择器：有基础选择器组成，常用于，修改某个父子级 子代的样式 */
+        /* 父级 子级 {样式} */
+        
+        ul li {
+            color: pink;
+        }
+        
+        ol li {
+            color: red;
+        }
+        /* 父级元素也可以是其他选择器 */
+        
+        .nav li {
+            color: yellow;
+        }
+        
+        .nav li a {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>这是ul的孩子</li>
+        <li>这是ul的孩子</li>
+        <li>这是ul的孩子</li>
+    </ul>
+
+    <ol>
+        <li>这是ol的孩子</li>
+        <li>这是ol的孩子</li>
+        <li>这是ol的孩子</li>
+    </ol>
+
+    <ol class="nav">
+        <li>这是ol的孩子</li>
+        <li>这是ol的孩子</li>
+        <li><a href="#">也可以是孙子级</a></li>
+    </ol>
+</body>
+
+</html>

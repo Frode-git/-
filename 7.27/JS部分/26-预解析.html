@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>预解析</title>
+    <script>
+        // 1.js引擎运行js 分为两步 ：预解析和代码执行
+        // （1）预解析  js引擎会把js里面所有的var，还有function（声明部分）提升到当前作用域的最前面
+        // （2）代码执行 按照代码书写顺序从上往下执行
+        // 2.预解析分为  变量预解析（变量提升）和函数预解析（函数提升）
+        // （1）变量提升  就是把所有的变量声明提升到当前作用域的最前面  不提升赋值操作
+        // （2）函数提升  就是把所有的函数声明提升到当前作用域的最前面  不调用函数
+
+
+        // 问1
+        // console.log(num);  // 报错
+
+        // 问2
+        console.log(num); // undefined   坑1
+        var num = 10;
+
+        // 等同于执行了以下代码
+        // var num;
+        // console.log(num);
+        // num = 10;
+
+        // 问3
+        fn();
+
+        function fn() {
+            console.log(11);
+        }
+
+        // 等同于执行以下代码
+        // function fn() {
+        //             console.log(11);
+        //         }
+        // fn();
+
+        // 问4
+        fun();
+        var fun = function() {
+                console.log(22); // 此时会报错
+            }
+            // 函数表达式  函数调用必须写在函数表达式下面
+
+        // 等同于执行以下代码
+        // var fun;
+        // fun();
+        // fun = function() {
+        //     console.log(22);
+        // }
+
+
+        // 预解析案例
+        f1();
+        console.log(c);
+        console.log(b);
+        console.log(a);
+
+        function f1() {
+            var a = b = c = 9;
+            // 此处需要注意：
+            // 相当于  var a = 9; b = 9; c = 9;    b 和 c直接赋值 没有var声明 当全局变量看
+            // 而集体声明  var a = 9, b = 9, c = 9;   注意区别二者
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+
+        // 等同于执行以下代码 
+        // function f1() {
+        //     var a;
+        //     a = b = c = 9; // 此时的b和c为全局变量
+        //     console.log(a);
+        //     console.log(b);
+        //     console.log(c);
+        // }
+        // f1();
+        // console.log(c);
+        // console.log(b);
+        // console.log(a);
+        // 因此输出 9 9 9 9 9 未定义
+    </script>
+
+    <body>
+
+    </body>
+
+</html>

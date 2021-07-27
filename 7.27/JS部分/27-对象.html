@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象</title>
+    <script>
+        // 在js中，对象是一组无序的相关属性和方法的集合，所有的事物都是对象，例如字符串、数值、数组、函数等
+        // 属性：事物的特征，在对象中用属性表示（常用名词）
+        // 方法：事物的行为，在对象中用方法表示（常用动词）
+
+        // 创建对象的三种方法
+        // 1.利用字面量创建对象
+        // var obj = {};   // 创建了一个空对象
+        var obj = {
+                name: '牛牛',
+                age: 18,
+                sex: '男',
+                sayHi: function() {
+                    console.log('hi~');
+                }
+            }
+            // (1) 里面的属性或方法 采用键值对的形式
+            // (2) 多个属性或者方法中间用逗号隔开
+            // (3) 方法冒号后面跟的是一个匿名函数
+
+        // 2.使用对象
+        // (1) 调用对象属性  对象名.属性名
+        console.log(obj.name);
+        // (2) 调用对象属性另一种方法   对象名['属性名']
+        console.log(obj['age']);
+        // (3) 调用对象方法   对象名.方法名()  千万别忘了小括号
+        obj.sayHi();
+
+        // 1. 利用 new Object创建对象
+        // new关键字的执行过程
+        // 1.在内存中创建一个新的空对象
+        // 2.让this指向这个新的对象
+        // 3.执行构造函数里面的代码，给这个新对象添加属性和方法
+        // 4.返回这个新对象(因此，构造函数里不需要return)
+        var obj1 = new Object();
+        obj1.name = '花花'; // 利用等号 赋值的方法 添加（追加）对象属性和方法
+        obj1.age = 20; // 每个属性和方法之间 用分号隔开
+        obj1.sex = '女';
+        obj1.sayHi = function() {
+            console.log('Hi~');
+        }
+
+        // 调用属性和方法与第一种方法完全相同
+
+        // 1. 利用构造函数创建对象    构造函数：将对象中相同的属性和方法，抽象出来封装到函数里面
+        // 创建几个人的对象   相同的属性：姓名、年龄、性别   相同的方法：唱歌
+        // 构造函数的语法格式
+        // function 构造函数名() {
+        //     this.属性 = 值;
+        //     tish.方法 = function() {}
+        // }
+        // new 构造函数名();  // 调用构造函数
+
+        function People(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.sing = function(song) {
+                console.log(song);
+            }
+        }
+        var xiaohua = new People('小华', 18, '男'); // 调用构造函数，返回一个对象    利用构造函数创建对象的过程也称为对象实例化
+        xiaohua.sing('花海');
+        console.log(xiaohua);
+        console.log(typeof xiaohua); // object
+        console.log(xiaohua.name);
+        console.log(xiaohua['age']);
+
+        // 1.构造函数名字首字母要大写
+        // 2.构造函数不需要return就可以返回结果
+        // 3.调用构造函数，必须使用new
+        // 4.只要new People() 调用函数就创建对象
+
+
+
+
+        // 变量、属性  函数、方法  区别
+        // 变量和属性
+        // 相同点：都是用来存储数据的
+        // 不同点：变量 单独声明并赋值  在使用的时候直接写变量名 单独存在   属性 在对象里面不需要声明 但是使用的时候必须是对象.属性名
+
+        //函数和方法
+        // 相同点：都是实现某种功能（做某种事）
+        // 不同点：函数 单独声明 调用 函数名（） 单独存在    方法 在对象里面  调用 对象.方法（）
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
