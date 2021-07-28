@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素显示模式转换</title>
+    <style>
+        a {
+            width: 400px;
+            height: 30px;
+            background: pink;
+            /* 转化为块级元素 */
+            display: block;
+        }
+        
+        div {
+            color: red;
+            /* 转化为行内元素 */
+            display: inline;
+        }
+        
+        span {
+            width: 300px;
+            height: 100px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">链接：行内元素，可以转化为块级元素</a>
+
+    <div>块级元素也可以转化为</div>
+    <div>行内元素</div>
+
+    <span>行内元素转化为行内块元素</span>
+    <span>行内元素转化为行内块元素</span>
+</body>
+
+</html>

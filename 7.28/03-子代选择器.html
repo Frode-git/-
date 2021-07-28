@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子代选择器</title>
+    <style>
+        /* 采用这种后代选择器，会导致所有的后代a标签都改变样式 */
+        /* div a {
+            color: pink;
+        } */
+        /* 子代选择器  语法： 元素1 > 元素2 {样式} */
+        /* 选择div里面所有最近一级的a标签 即值选择亲儿子*/
+        
+        div>a {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a href="#">这是儿子</a>
+        <a href="#">这也是儿子</a>
+        <p>
+            <a href="#">这是孙子</a>
+        </p>
+    </div>
+</body>
+
+</html>

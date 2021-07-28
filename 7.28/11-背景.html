@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            /* 背景颜色 */
+            /* 页面元素既可添加背景颜色，也可添加背景图片 */
+            background-color: tomato;
+            /* 背景图片  不要落下 url() */
+            background-image: url(images/logo.png);
+            /* 1.背景平铺 */
+            /* 设置不平铺 */
+            background-repeat: no-repeat;
+            /* 默认为平铺 */
+            /* background-repeat: repeat; */
+            /* 沿着x轴或y轴平铺 */
+            /* background-repeat: repeat-x; */
+            /* background-repeat: repeat-y; */
+            /* background-position: x y  或者 方位名词 x轴（left center right） y轴（top center bottom）  */
+            /* background-position: center top; */
+            /* background-position: right top; */
+            /* 参数单位都是方位名词是，左右两个词的顺序无所谓 */
+            /* background-position: right;   这种情况，一定是水平靠右对齐 */
+            /* background-position: top; 这种情况，一定是垂直靠上对齐*/
+            /* 参数单位都是精确单位时，一定是按照x y的顺序 */
+            /* background-position: 20px 90px; */
+            /* 参数单位还可以是混合单位，顺序：x,y */
+            background-position: 20px center;
+        }
+        
+        h3 {
+            width: 181px;
+            height: 41px;
+            /* background-color: pink; */
+            font-weight: 400;
+            line-height: 41px;
+            text-indent: 1.5em;
+            font-size: 14px;
+            background-image: url(images/icon.png);
+            background-repeat: no-repeat;
+            background-position: center left;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        a:link {
+            color: rgb(14, 13, 13);
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <h3><a href="#">成长守护平台</a></h3>
+</body>
+
+</html>

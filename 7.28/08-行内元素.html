@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行内元素</title>
+    <style>
+        input {
+            width: 200px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <span>相邻行内元素在同一行  一行可以显示多个</span>
+    <span>高度、宽度直接设置是无效的</span>
+    <strong>默认宽度，就是它本身内容的宽度</strong>
+    <span>行内元素只能容纳文本或其他行内元素</span>
+    <strong>注意：链接里面不能再放链接</strong>
+    <span>特殊情况：<a>链接里面可以放块级元素，但是给a转化一下块级模式最安全</a></span>
+
+    <!-- 在行内元素中有几个特殊的标签——<input />、<img />、<td>，它们同时具有块元素和行内元素的特点，也称这些元素为行内块元素 -->
+    <input type="text">
+    <input type="text">
+
+</body>
+
+</html>

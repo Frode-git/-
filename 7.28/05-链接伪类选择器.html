@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>链接伪类选择器</title>
+    <style>
+        /* 为保证效果实现  链接伪类选择器的顺序一定要按照LVHA的顺序，不要颠倒， */
+        /* 1. a:link   选择未访问过的链接 */
+        
+        a:link {
+            color: #333;
+            text-decoration: none;
+        }
+        /* 2.a:visited  选择访问过的链接 */
+        
+        a:visited {
+            color: orange;
+        }
+        /* 3.a:hover  选择鼠标经过的链接 */
+        
+        a:hover {
+            color: skyblue;
+        }
+        /* 4.a:active  选择按下鼠标还未弹起鼠标的链接 */
+        
+        a:active {
+            color: green;
+        }
+        /* 在实际开发过程中，一般只需要设置链接的样式 和 鼠标经过时的样式 两种即可 */
+    </style>
+
+</head>
+
+<body>
+    <a href="#">夺冠</a>
+</body>
+
+</html>
