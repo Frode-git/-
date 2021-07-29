@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数字游戏</title>
+    <script>
+        // 求随机数
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        // 主程序  猜数1~100，并且只有十次猜数机会
+        var ran = getRandom(1, 100);
+        var k = 1;
+        while (k <= 10) {
+            var num = prompt('剩余' + (11 - k) + '次机会\n请输入1~100之间的一个数进行猜数：');
+            k++;
+            if (num > ran) {
+                alert('猜大了哟！');
+            } else {
+                if (num < ran) {
+                    alert('猜小了哟！');
+                } else {
+                    alert('恭喜你，终于猜对啦！');
+                    break;
+                }
+            }
+        }
+        if (k > 10) {
+            alert('抱歉，猜数机会已用完！');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日期格式化</title>
+    <script>
+        // 格式化日期 年 月 日
+        var date = new Date();
+        console.log(date.getFullYear()); // 获取当前年份 2021
+        console.log(date.getMonth() + 1); // 获取当前月份（范围：0~11），因此别忘了月份+1
+        console.log(date.getDate()); // 获取当前日
+        console.log(date.getDay()); // 获取当前星期几（数字表示）（范围：周日0~周六6）
+        // 输出格式 2021年7月29日 星期四
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var dates = date.getDate();
+        var day = date.getDay(); // 因为星期输出的为数字，因此采用数组转换
+        var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']; // 因为星期日输出为0，因此放在前面
+        console.log(year + '年' + month + '月' + dates + '日 ' + arr[day]);
+
+        // 格式化日期 时分秒
+        console.log(date.getHours()); // 时
+        console.log(date.getMinutes()); // 分
+        console.log(date.getSeconds()); // 秒
+        // 用函数封装 返回当前时分秒
+        function getTimer() {
+            var time = new Date();
+            var hour = time.getHours();
+            hour = hour < 10 ? '0' + hour : hour;
+            var minute = time.getMinutes();
+            minute = minute < 10 ? '0' + minute : minute;
+            var second = time.getSeconds();
+            second = second < 10 ? '0' + second : second;
+            return hour + ':' + minute + ':' + second;
+
+        }
+        console.log(getTimer());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

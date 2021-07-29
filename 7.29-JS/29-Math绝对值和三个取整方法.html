@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math绝对值和三个取整方法</title>
+    <script>
+        // 求绝对值：Math.abs();
+        console.log(Math.abs(1)); // 1
+        console.log(Math.abs(-1)); // 1
+        console.log(Math.abs('-1')); // 1 隐式转换 将字符串型的-1转换为数字型的-1
+        console.log(Math.abs('word')); // NaN
+        // 取整：Math.floor()  Math.ceil()  Math.round()
+        // Math.floor() 向下取整 往最小取
+        console.log(Math.floor(1.1)); // 1
+        console.log(Math.floor(1.9)); // 1
+        // Math.ceil() 向上取整 往最大取
+        console.log(Math.ceil(1.1)); // 2
+        console.log(Math.ceil(1.9)); // 2
+        // Math.round() 四舍五入 
+        console.log(Math.round(1.4)); // 1
+        console.log(Math.round(1.9)); // 2
+        console.log(Math.round(-1.1)); // -1
+        console.log(Math.round(-1.9)); // -2
+        console.log(Math.round(-1.5)); // -1 特殊情况 .5 往大了取
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
