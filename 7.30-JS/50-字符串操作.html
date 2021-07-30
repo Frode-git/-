@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串操作</title>
+    <script>
+        // 1.concat('字符串1', '字符串2'……)   字符串拼接更常用+
+        var str = 'July';
+        console.log(str.concat('Andy')); // JulyAndy
+
+        // 2.截取部分字符 substr('起始位置', '截取字符数')          还有 slice 和 substring 等方法可用，有需要再了解   这三种方法功能差不多
+        str1 = '时间会给你答案';
+        console.log(str1.substr(5, 2)); // 答案
+
+        // 3.替换字符  replace('被替换的字符', '替换为的字符')   只能替换一个字符
+        console.log(str.replace('J', 'j'));
+
+        // 4.字符转换为数组 split('分隔符')    前面学过 join('分隔符')  将数组转换为字符串
+        str2 = 'red, pink, blue';
+        console.log(str2.split(','));
+        str3 = 'red&pink&blue';
+        console.log(str3.split('&')); // split('分隔符')   括号里的分隔符是字符串中的分隔符
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

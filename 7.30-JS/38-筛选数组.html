@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>筛选数组</title>
+    <script>
+        // 将工资小于两千的筛选出来
+        var arr = [1800, 2100, 2200, 1200, 1500];
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] < 2000) {
+                // newArr[newArr.length] = arr[i]; // 以往的方法
+                newArr.push(arr[i]); // 采用push追加更简洁
+            }
+        }
+        console.log(newArr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

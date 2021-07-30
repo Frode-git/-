@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串不可变性</title>
+    <script>
+        var str = 'frode';
+        console.log(str);
+        str = 'july'; // 在内存中新开辟一个空间，存放'july',但是上面'frode'的内存不会被释放，只是str变量指向了新地址'july'
+        console.log(str);
+        // 因此不要大量的拼接字符串
+        var str = ' ';
+        for (var i = 1; i <= 100; i++) { // 当这里循环的次数超级大时，发现内存不够用，导致卡顿，正是由于字符串的不可变性
+            str += i;
+        }
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

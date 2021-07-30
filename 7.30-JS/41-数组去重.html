@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组去重</title>
+    <script>
+        // 1.目的：将数组中有重复的元素，去掉重复部分
+        // 2.核心算法：遍历旧数组，拿着旧数组到新数组中查找，是否存在该元素，若存在，则不用管了，若不存在，则将此元素添加至新数组中
+        // 3.用一个函数封装此功能
+        // 4.如何判断元素是否在数组中存在？  采用indexOf()查找索引号，若返回-1，则表明数组中不存在此元素
+        function unique(arr) {
+            var newArr = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (newArr.indexOf(arr[i]) === -1) {
+                    newArr.push(arr[i]);
+                }
+            }
+            return newArr;
+        }
+
+        var arr = unique(['a', 'd', 'a', 'c', 'z', 'j', 'c', 'a']);
+        console.log(arr);
+        var arr1 = unique(['blue', 'green', 'red', 'blue']);
+        console.log(arr1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

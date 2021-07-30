@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>根据位置返回字符</title>
+    <script>
+        // 1.charAt(索引号) 根据位置返回字符
+        var str = 'andy';
+        console.log(str.charAt(2)); // d
+        // 遍历所有字符
+        for (var i = 0; i < str.length; i++) {
+            console.log(str.charAt(i));
+        }
+        // 2.charCodeAt(索引号) 返回相应位置字符的ASCII值 目的：判断用户按下了哪个键
+        console.log(str.charCodeAt(0)); // 97--a
+        // 3.str[索引号] H5新增的
+        console.log(str[0]); // a
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>统计出现次数最多的字符</title>
+    <script>
+        // 知识点补充
+        var o = {
+            age: 18
+        }
+        if (o['age']) {
+            console.log('有这个属性');
+        } else {
+            console.log('没有这个属性');
+        }
+        // 1. 统计各字符的次数
+        var str = 'oabcooxysksfjkosdnosx';
+        var obj = {}
+        var chars = '';
+        for (var i = 0; i < str.length; i++) {
+            chars = str.charAt(i); // chars为字符串的每一个字符
+            if (obj[chars]) {
+                obj[chars]++;
+            } else {
+                obj[chars] = 1;
+            }
+        }
+        console.log(obj);
+        // 2.遍历对象  求次数最多的字符
+        var max = 0;
+        var ch = '';
+        for (var k in obj) {
+            if (obj[k] > max) {
+                max = obj[k]; // 遍历对象 k 为属性名  obj[k] 为属性值
+                ch = k;
+            }
+        }
+        console.log('出现次数最多的字符为：' + ch + ',次数为：' + max);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
