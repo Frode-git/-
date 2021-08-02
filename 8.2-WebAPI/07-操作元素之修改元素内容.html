@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>操作元素之修改元素内容</title>
+    <style>
+        div,
+        p {
+            width: 500px;
+            height: 50px;
+            background: pink;
+            font-size: 25px;
+            color: #fff;
+            line-height: 50px;
+            text-indent: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击显示系统当前时间</button>
+    <div>显示时间</div>
+    <p>刷新显示</p>
+    <script>
+        // 点击按钮，div盒子显示时间
+        // 1. 获取事件源
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        // 2. 注册事件
+        btn.onclick = function() {
+            div.innerText = '2021-8-2';
+        }
+
+        // 不用点击按钮，刷新页面直接显示时间
+        function getDate() {
+            var date = new Date();
+            // 输出格式 2021年7月29日 星期四
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var dates = date.getDate();
+            var day = date.getDay(); // 因为星期输出的为数字，因此采用数组转换
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']; // 因为星期日输出为0，因此放在前面
+            return year + '年' + month + '月' + dates + '日 ' + arr[day];
+        }
+        var p = document.querySelector('p');
+        // 元素可以不添加事件
+        p.innerText = getDate();
+    </script>
+</body>
+
+</html>

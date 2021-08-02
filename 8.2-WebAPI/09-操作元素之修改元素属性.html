@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>操作元素之修改元素属性</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="jj">街景</button>
+    <button id="fj">风景</button> <br>
+    <!--记得换行，让图片单独显示-->
+    <img src="images/jj.png" alt="" title="街景">
+    <script>
+        var jj = document.getElementById('jj');
+        var fj = document.getElementById('fj');
+        var img = document.querySelector('img');
+        jj.onclick = function() {
+            img.src = "images/jj.png";
+            img.title = "街景";
+        }
+        fj.onclick = function() {
+            img.src = "images/fj.jpg";
+            img.title = "风景";
+        }
+    </script>
+</body>
+
+</html>
