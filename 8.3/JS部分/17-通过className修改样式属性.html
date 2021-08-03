@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通过className修改样式属性</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        .change {
+            background-color: purple;
+            margin-top: 100px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first">文本</div>
+    <script>
+        var div = document.querySelector('div');
+        div.onclick = function() {
+            // 1. 使用element.sytle 修改元素样式  如果样式较少 或者 功能较简单的情况下使用
+            // this.style.backgroundColor = 'purple';
+            // this.style.marginTop = '100px';
+            // this.style.fontSize = '25px';
+
+            // 2. 使用className 更改元素的样式  适合于样式较多 或者 功能较复杂的情况
+            // 直接添加类名 或者 覆盖原先的类名
+            // this.className = 'change';
+            // 要想保留原来的类名 可以用多类名选择器
+            this.className = 'first change';
+        }
+    </script>
+</body>
+
+</html>

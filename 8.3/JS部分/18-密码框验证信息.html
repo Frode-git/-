@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>密码框验证信息</title>
+    <style>
+        div {
+            width: 600px;
+            margin: 100px auto;
+        }
+        
+        .message {
+            display: inline-block;
+            font-size: 12px;
+            color: #999;
+            background: url(images/mess.png) no-repeat left center;
+            padding-left: 20px;
+        }
+        
+        .wrong {
+            color: red;
+            background-image: url(images/wrong.png);
+        }
+        
+        .right {
+            background-image: url(images/right.png);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="password" class="pwd">
+        <p class="message">请输入6~16位数密码</p>
+    </div>
+
+    <script>
+        // 获取元素
+        var pwd = document.querySelector('.pwd');
+        var mess = document.querySelector('.message');
+        // 注册事件 处理程序
+        pwd.onblur = function() {
+            if (this.value.length < 6 || this.value.length > 16) {
+                mess.className = 'message wrong';
+            } else {
+                mess.className = 'message right';
+                mess.innerHTML = '输入正确';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>显示隐藏文本框内容</title>
+    <style>
+        input {
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" value="手机">
+    <script>
+        // 获取元素
+        var text = document.querySelector('input');
+        // 注册事件  获得焦点事件  onfocus
+        text.onfocus = function() {
+                if (this.value === '手机') {
+                    this.value = '';
+                }
+                this.style.color = '#333'; // 设置输入文字时的文字颜色 深色一点
+            }
+            // 失去焦点事件  onblur
+        text.onblur = function() {
+            if (this.value === '') {
+                this.value = '手机';
+            }
+            this.style.color = '#999'; // 失去焦点时 文字颜色浅色一点
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改样式属性</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 获取元素
+        var div = document.querySelector('div');
+        // 注册事件 处理程序
+        div.onclick = function() {
+            this.style.backgroundColor = 'purple'; // js中修改样式 生成的是行内式  并且采用的是驼峰命名法
+            this.style.width = '500px';
+        }
+    </script>
+</body>
+
+</html>
