@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品模块</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+        }
+        
+        .box {
+            width: 298px;
+            height: 415px;
+            margin: 100px auto;
+            background-color: #fff;
+        }
+        
+        .box img {
+            width: 100%;
+        }
+        
+        .box .review {
+            font-size: 14px;
+            height: 70px;
+            /* 设置高度，因为评价字数不一，这样可以确保整体布局不乱 */
+            padding: 0 28px;
+            margin-top: 30px;
+        }
+        
+        .box .apprise {
+            font-size: 12px;
+            color: #b0b0b0;
+            padding: 0 28px;
+            margin-top: 20px;
+        }
+        
+        .box .info {
+            font-size: 14px;
+            margin-top: 15px;
+            padding: 0 28px;
+        }
+        
+        .box h4 {
+            display: inline-block;
+            font-weight: 400;
+            /* 此处字体粗细不能设置在父元素  因为子元素含有h元素，h元素有特定的默认字体粗细 不会继承父元素的字体粗细 */
+        }
+        
+        .box em {
+            font-style: normal;
+            color: #ebe4e0;
+            margin: 0 6px 0 15px;
+        }
+        
+        .box span {
+            color: #ff6700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="images/img.jpg" alt="">
+        <p class="review">快递牛，整体不错蓝牙可以说秒连。红米给力</p>
+        <div class="apprise">来自于 117384232 的评价</div>
+        <div class="info">
+            <!-- 引号先用……代替 -->
+            <h4>Redmi AirDots真无线蓝...</h4>
+            <em>|</em>
+            <span>99.9元</span>
+        </div>
+    </div>
+</body>
+
+</html>

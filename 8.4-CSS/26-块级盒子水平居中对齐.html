@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>块级盒子水平居中对齐</title>
+    <style>
+        .header {
+            /* 块级元素水平居中对齐： 盒子必须指定了宽度  左右外边距都设置为auto */
+            /* 此方法只能让块级盒子居中对齐，若想让行内元素居中对齐，可给其父亲设置text-align:center; */
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            /* margin: 0 auto;  这两种等价 */
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header"></div>
+</body>
+
+</html>

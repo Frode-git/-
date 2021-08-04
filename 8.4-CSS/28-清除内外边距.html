@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除内外边距</title>
+    <style>
+        /* 发现234与游览器顶端总是有一定的距离  sdf也是与ul有一定的距离  这是因为各元素有自己默认的内外边距  因此在实际开发中 往往需要清零 */
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 同时，行内元素 为了照顾兼容性 尽量只设置左右边距，但是转换为行内块元素就可以都设置了 */
+        
+        span {
+            background-color: pink;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>234</div>
+    <ul>
+        <li>sdf</li>
+    </ul>
+    <span>sdfsdfsfsdfsdf</span>
+</body>
+
+</html>

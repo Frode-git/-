@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>padding不会撑开盒子大小情况</title>
+    <style>
+        h1 {
+            /* width: 100%; 若设置宽度，会发现下面设置padding后，将撑开盒子 */
+            height: 100px;
+            /* 不设置宽度，则和父亲的宽度一样 */
+            background-color: pink;
+            padding: 30px;
+            /* 发现只设置高度不设置宽度时，设置padding不会撑开盒子宽度 */
+        }
+        
+        div {
+            width: 400px;
+            height: 200px;
+            background-color: skyblue;
+        }
+        
+        div p {
+            padding: 30px;
+            /* 宽度默认为父亲的宽度，没有设置高度，设置了padding，则高度为30*2 */
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+    <div>
+        <p></p>
+    </div>
+</body>
+
+</html>
