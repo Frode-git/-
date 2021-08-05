@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义属性操作</title>
+</head>
+
+<body>
+    <div class="nav" id="demo" data-index="1"></div>
+    <script>
+        var div = document.querySelector('div');
+        // 1.获取元素的属性
+        // (1) element.属性
+        console.log(div.id);
+        // (2) element.getAttribute('属性')  主要是获取自定义属性 如:index   自定义属性规范：data-属性
+        console.log(div.getAttribute('data-index'));
+        console.log(div.getAttribute('id'));
+        console.log(div.dataset.index); // dateset 是一个集合，里面存放了所有以data开头的属性
+        // 如果自定义属性里面有多个-链接，js中采用驼峰命名法获取
+        // 2. 设置元素属性值  
+        // (1) element.属性 = '值';
+        div.id = 'test';
+        // (2) element.setAttribute('属性'， '值')
+        div.setAttribute('class', 'navs');
+        // 3. 移除属性
+        // element.removeAttribute
+        div.removeAttribute('data-index');
+    </script>
+</body>
+
+</html>
