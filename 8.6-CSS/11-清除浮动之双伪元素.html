@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动之双伪元素</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        /* 此方法，与after伪元素差不多，只是插入两个盒子，一前一后，更加体现了，“闭合浮动” */
+        
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
+        }
+        
+        .clearfix:after {
+            clear: both;
+        }
+        
+        .clearfix {
+            *zoom: 1;
+        }
+        
+        .box {
+            width: 400px;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+        
+        .box .one {
+            float: left;
+            width: 100px;
+            height: 150px;
+            background-color: pink;
+        }
+        
+        .box .two {
+            float: left;
+            width: 100px;
+            height: 150px;
+            background-color: purple;
+        }
+        
+        .footer {
+            height: 200px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box clearfix">
+        <div class="one"></div>
+        <div class="two"></div>
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html>

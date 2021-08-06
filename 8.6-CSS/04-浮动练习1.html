@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动练习</title>
+    <style>
+        .box {
+            width: 1200px;
+            height: 460px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+        
+        .left {
+            float: left;
+            width: 230px;
+            height: 460px;
+            background-color: skyblue;
+        }
+        
+        .right {
+            float: left;
+            width: 970px;
+            height: 460px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 浮动元素常常与父级盒子搭配使用 -->
+    <div class="box">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+
+</body>
+
+</html>

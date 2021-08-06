@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动盒子一行显示</title>
+    <style>
+        /* 浮动的盒子在一行显示，并且是顶部对齐排列，如果父级盒子装不下，则换行显示 */
+        
+        div {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        .two {
+            background-color: skyblue;
+            height: 250px;
+        }
+        
+        .four {
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <div class="two">2</div>
+    <div>3</div>
+    <div class="four">4</div>
+</body>
+
+</html>

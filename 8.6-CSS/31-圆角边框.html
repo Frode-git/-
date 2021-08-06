@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圆角边框</title>
+    <style>
+        .circular {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* 生成圆角边框，即让圆的半径等于正方形盒子边长的一半 */
+            border-radius: 100px;
+            /* border-radius: 50%; 表示为宽或长的一半 */
+        }
+        
+        .cir_rec {
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+            /* 圆角矩形，r设置为高度的一半 */
+            border-radius: 100px;
+        }
+        
+        .others {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* 从左上角为起点，按照顺时针 */
+            /* border-radius: 10px 20px 30px 40px; */
+            /* 若只给两个值，则对角相等 */
+            /* border-radius: 10px 50px; */
+            /* 若给三个值，则一个给第一个点，第三个给第三个点，第二个给第二、四个点 */
+            /* border-radius: 10px 50px 100px; */
+            /* 还可以只设定一个圆角 */
+            border-top-left-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 圆角边框：在四个角，生成一个（椭）圆，即沿着圆的边形成圆角边框 -->
+    1.圆形做法：
+    <div class="circular"></div>
+    2.圆角矩形做法：
+    <div class="cir_rec"></div>
+    3.可以设置不同的圆角
+    <div class="others"></div>
+</body>
+
+</html>

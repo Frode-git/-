@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子阴影</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: pink;
+            /* 盒子阴影 box-shadow: h-shadow v-shadow blur spread color inset; */
+            /* h-shadow:水平阴影的位置，右为正方形，可以负值；v-shadow:垂直阴影的位置，下为正方向，可以负值； 这两个必写*/
+            /* blur：模糊距离，即模糊程度  spread：阴影尺寸；  color：阴影颜色；  inset：内部阴影，默认为外部阴影，即不用写 */
+            /* box-shadow: 10px 10px 10px -4px rgba(0, 0, 0, .3); */
+        }
+        
+        div:hover {
+            /* 可以设置当鼠标经过时才显示阴影 */
+            box-shadow: 10px 10px 10px -4px rgba(0, 0, 0, .3);
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动之父元素overflow</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .box {
+            width: 400px;
+            border: 1px solid black;
+            margin: 0 auto;
+            /* 给父元素设置overflow: hidden，即可清除其孩子的浮动影响，缺点：会导致溢出部分无法显示 */
+            overflow: hidden;
+        }
+        
+        .box .one {
+            float: left;
+            width: 100px;
+            height: 150px;
+            background-color: pink;
+        }
+        
+        .box .two {
+            float: left;
+            width: 100px;
+            height: 150px;
+            background-color: purple;
+        }
+        
+        .footer {
+            height: 200px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="one"></div>
+        <div class="two"></div>
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html>
