@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节点拷贝</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        // 获取元素
+        var ul = document.querySelector('ul');
+        // 拷贝节点  node.cloneNode()   如果括号里 为空或则false  则为浅拷贝 只拷贝标签 不拷贝里面的内容
+        var lili = ul.children[0].cloneNode();
+        ul.appendChild(lili);
+        //  如果括号里面为 true 则为深度拷贝 标签和内容都拷贝
+        var li = ul.children[2].cloneNode(true);
+        ul.appendChild(li);
+    </script>
+</body>
+
+</html>

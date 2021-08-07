@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>删除发布留言</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            padding: 100px;
+        }
+        
+        textarea {
+            width: 200px;
+            height: 100px;
+            border: 1px solid pink;
+            outline: none;
+            resize: none;
+        }
+        
+        ul {
+            margin-top: 50px;
+        }
+        
+        li {
+            width: 300px;
+            padding: 5px;
+            background-color: rgb(245, 209, 243);
+            color: red;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+        
+        li a {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id=""></textarea>
+    <button>发布</button>
+    <ul>
+    </ul>
+    <script>
+        // 获取元素
+        var ul = document.querySelector('ul');
+        var btn = document.querySelector('button');
+        var text = document.querySelector('textarea');
+        // 注册事件
+        btn.onclick = function() {
+            if (text.value == '') {
+                alert('您未输入任何内容');
+                return false;
+            } else {
+                // 1.创建节点
+                var li = document.createElement('li');
+                // 2.给li赋值   阻止链接跳转 href = 'javascipt:;'   or  href = 'javascript:void(0);'
+                li.innerHTML = text.value + "<a href='javascript:;'>删除</a>";
+                // 3.添加节点
+                ul.insertBefore(li, ul.children[0]);
+                // 4.删除节点  删除的li，需要获取a对应的li，a.parentNode即为a所在的li
+                var as = document.querySelectorAll('a');
+                for (var i = 0; i < as.length; i++) {
+                    as[i].onclick = function() {
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建和添加节点</title>
+</head>
+
+<body>
+    <ul>
+        <li>123</li>
+    </ul>
+    <script>
+        // 1. 创建节点 creatElement('元素')
+        var li = document.createElement('li');
+        // 2. 添加节点  node.appendChild(child)   node是父级  child是子级  在最后面添加  类似数组中的push 
+        var ul = document.querySelector('ul');
+        ul.appendChild(li);
+        // 3. 添加节点在指定位置   node.insertBefore(child, 指定元素)
+        var lii = document.createElement('li');
+        ul.insertBefore(lii, ul.children[0]);
+    </script>
+</body>
+
+</html>

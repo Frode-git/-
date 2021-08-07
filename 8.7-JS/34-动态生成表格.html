@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态生成表格</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        td,
+        th {
+            border: 1px solid #333;
+        }
+        
+        thead,
+        tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>分数</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        // 数据部分，采用对象包括
+        // 1.创建数据
+        var datas = [{
+                name: '王丽英',
+                subject: 'javascript',
+                score: 100
+            }, {
+                name: '吴丽华',
+                subject: 'javascript',
+                score: 80
+            }, {
+                name: '孙建国',
+                subject: 'javascript',
+                score: 99
+            }, {
+                name: '李斯特',
+                subject: 'javascript',
+                score: 59
+            }]
+            // 2.创建行
+        var tbody = document.querySelector('tbody');
+        for (var i = 0; i < datas.length; i++) {
+            var tr = document.createElement('tr');
+            // 3.添加行
+            tbody.appendChild(tr);
+            // 4.创建行里的单元格  遍历对象里的属性获取单元格数量
+            for (var k in datas[i]) {
+                var td = document.createElement('td');
+                // 添加单元格的时候把数据一并放进去
+                td.innerHTML = datas[i][k];
+                tr.appendChild(td);
+            }
+            // 5.每一行都一个操作：删除
+            var td = document.createElement('td');
+            td.innerHTML = '<a href="javascript:;">删除</a>';
+            tr.appendChild(td);
+        }
+        // 6.实现删除
+        var as = document.querySelectorAll('a');
+        for (var i = 0; i < as.length; i++) {
+            as[i].onclick = function() {
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+    </script>
+</body>
+
+</html>

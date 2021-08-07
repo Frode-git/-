@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子节点操作</title>
+</head>
+
+<body>
+    <ul>
+        <li>li1</li>
+        <li>li2</li>
+        <li>li3</li>
+        <li>li4</li>
+    </ul>
+    <script>
+        // 子节点 node.childNodes
+        var ul = document.querySelector('ul');
+        // 发现，返回的子节点，不只是含有li，还包含了，空格（换行）这些文本子节点
+        console.log(ul.childNodes);
+        console.log(ul.childNodes[0].nodeType);
+        // 只获得元素节点  此方法非标准  但是在实际开发中更常用
+        console.log(ul.children);
+
+        // 获取第一个子节点、最后一个子节点
+        // 第一个  firstChild  第一个子节点（文本节点、元素节点）
+        console.log(ul.firstChild);
+        // 最后一个  lastChild 最后一个子节点（文本节点、元素节点）
+        console.log(ul.lastChild);
+        // 返回第一个（最后一个）元素节点  此方法会有兼容性问题
+        console.log(ul.firstElementChild);
+        console.log(ul.lastElementChild);
+        // 实际开发的写法  没有兼容性问题
+        console.log(ul.children[0]);
+        console.log(ul.children[ul.children.length - 1]);
+    </script>
+</body>
+
+</html>
