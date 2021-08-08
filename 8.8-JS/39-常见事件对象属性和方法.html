@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常见事件对象属性和方法</title>
+</head>
+
+<body>
+    <div>123</div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        // 常见事件对象属性和方法
+        // 1. e.target 返回触发事件的对象（元素）   this 返回的是绑定事件的对象（元素）
+        // 2. 与this类似的属性  e.currentTarget
+        var div = document.querySelector('div');
+        div.onclick = function(e) {
+            console.log(e.target);
+            console.log(this);
+        }
+        var ul = document.querySelector('ul');
+        ul.onclick = function(e) {
+            console.log(e.target); // 点击li 返回的是li
+            console.log(this); // 点击li 返回的是ul
+            console.log(e.currentTarget);
+        }
+    </script>
+</body>
+
+</html>

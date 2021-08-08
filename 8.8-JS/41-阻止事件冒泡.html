@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阻止事件冒泡</title>
+    <style>
+        .father {
+            overflow: hidden;
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: pink;
+        }
+        
+        .father .son {
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+            text-align: center;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        // 阻止事件冒泡 e.stopPropagation()
+        var son = document.querySelector('.son');
+        son.addEventListener('click', function(e) {
+            alert('son');
+            e.stopPropagation();
+        }, false);
+        // 此时，处于冒泡阶段，因此会先弹出son，再弹出father
+        var father = document.querySelector('.father');
+        father.addEventListener('click', function() {
+            alert('father');
+        }, false);
+    </script>
+</body>
+
+</html>

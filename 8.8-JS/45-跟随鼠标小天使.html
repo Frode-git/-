@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跟随鼠标小天使</title>
+    <style>
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/angel.gif" alt="">
+    <script>
+        // 1.mousemove  只要鼠标移动了1px  就会触发这个事件
+        // 2.核心原理：每次移动，都获取鼠标坐标，把这个x和y的值设置为图片的left和top  就可以移动图片啦
+        var img = document.querySelector('img');
+        document.addEventListener('mousemove', function(e) {
+            var x = e.pageX;
+            var y = e.pageY;
+            // 注意：x和y只有数值，而距离的单位为px  同时发现鼠标在图片左上角（默认以左上角对齐） 减去图片长宽的一半即可
+            img.style.left = x - 48 + 'px';
+            img.style.top = y - 40 + 'px';
+        })
+    </script>
+</body>
+
+</html>

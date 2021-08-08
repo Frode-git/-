@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件委托</title>
+</head>
+
+<body>
+    <ul>
+        <li>点我弹出</li>
+        <li>点我弹出</li>
+        <li>点我弹出</li>
+        <li>点我弹出</li>
+        <li>点我弹出</li>
+    </ul>
+    <script>
+        // 事件委托： 给父节点添加事件侦听器 ，利用冒泡影响每一个子节点
+        var ul = document.querySelector('ul');
+        ul.addEventListener('click', function(e) {
+            // alert('弹出了吧~');
+            // 修改点击元素的背景 e.target 获取点击的元素
+            e.target.style.backgroundColor = 'pink';
+        })
+    </script>
+</body>
+
+</html>

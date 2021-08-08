@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标事件对象</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 鼠标事件  MouseEvent
+        document.addEventListener('click', function(e) {
+            // e.clientX  e.clientY  获取鼠标相对于浏览器可视区的x、y坐标
+            console.log(e.clientX);
+            console.log(e.clientY);
+            console.log('-----------------');
+            // e.pageX e.pageY   获取鼠标相对于页面文档的x、y坐标  当有滚动条时，clientY仍然显示的是距离可视区上沿  pageY是显示距离页面文档最上沿
+            console.log(e.pageX);
+            console.log(e.pageY);
+            console.log('----------------');
+            // e.screenX   e.screenY  获取鼠标相对于屏幕的x、y坐标
+            console.log(e.screenX);
+            console.log(e.screenY);
+        })
+    </script>
+</body>
+
+</html>

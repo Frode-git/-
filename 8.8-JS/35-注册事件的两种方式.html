@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册事件的两种方式</title>
+</head>
+
+<body>
+    <button>传统注册事件</button>
+    <button>事件侦听注册事件</button>
+    <script>
+        var btns = document.querySelectorAll('button');
+        // 1.传统注册事件   具有唯一性 后面的覆盖前面的
+        btns[0].onclick = function() {
+            alert('234');
+        }
+        btns[0].onclick = function() {
+                alert('sdfsd');
+            }
+            // 2.事件侦听注册事件 addEventListener(type, listener, [useCapture])  type:事件类型（字符串型），如click，mouseover。  listener：事件处理函数  第三个参数默认为false
+            // 同一元素  同一事件可以添加多个侦听器（事件处理从程序）
+        btns[1].addEventListener('click', function() {
+            alert('234');
+        })
+        btns[1].addEventListener('click', function() {
+            alert('df');
+        })
+    </script>
+</body>
+
+</html>

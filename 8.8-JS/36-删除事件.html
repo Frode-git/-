@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>删除事件</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>11</div>
+    <div>22</div>
+    <script>
+        var divs = document.querySelectorAll('div');
+        // 1.传统方式删除事件   将onclick设置为null
+        divs[0].onclick = function() {
+                alert('3423');
+                divs[0].onclick = null;
+            }
+            // 2.removeEventListener   删除事件时，处理函数，不能用匿名函数，必须指定删除
+        divs[1].addEventListener('click', fn);
+
+        function fn() {
+            alert('234324');
+            divs[1].removeEventListener('click', fn); // 括号里的参数与添加侦听器一样
+        }
+    </script>
+</body>
+
+</html>
