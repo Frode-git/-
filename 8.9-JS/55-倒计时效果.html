@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时效果</title>
+    <style>
+        div {
+            margin: 200px;
+        }
+        
+        span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="hour">1</span>
+        <span class="minute">2</span>
+        <span class="second">3</span>
+    </div>
+
+    <script>
+        var h = document.querySelector('.hour'); // 获取小时的黑色盒子
+        var m = document.querySelector('.minute'); // 获取分钟的黑色盒子
+        var s = document.querySelector('.second'); // 获取秒钟的黑色盒子
+        var inputTime = +new Date('2021-8-10 00:00:00'); // 截止时间总的毫秒数
+        countDown(); // 发现每次页面刷新，都会显示盒子原先内容123，因为定时器延迟一秒，故在此之前执行一次函数
+        setInterval(countDown, 1000);
+
+        function countDown() {
+            var nowTime = +new Date(); // 当前时间总的毫秒数
+            var times = (inputTime - nowTime) / 1000; // 时间戳的差 总秒数
+            var hour = parseInt(times / 60 / 60 % 24); // 时 注意 一定要求余%，防止显示异常
+            hour = hour < 10 ? '0' + hour : hour;
+            h.innerHTML = hour;
+            var minute = parseInt(times / 60 % 60); // 分
+            minute = minute < 10 ? '0' + minute : minute;
+            m.innerHTML = minute;
+            var second = parseInt(times % 60); // 秒
+            second = second < 10 ? '0' + second : second;
+            s.innerHTML = second;
+        }
+    </script>
+</body>
+
+</html>

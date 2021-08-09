@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器之setInterval</title>
+</head>
+
+<body>
+    <script>
+        // setInterval
+        // 语法规范: setInterval(调用函数，延迟时间);
+        // 与setTimeout不同，setTimeout到达延迟时间，只能执行一次回调函数，  而setInterval到达延迟时间，无数次调用回调函数
+        setInterval(function() {
+            console.log('继续输出');
+        }, 1000);
+    </script>
+</body>
+
+</html>

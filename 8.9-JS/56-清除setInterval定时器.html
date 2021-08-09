@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除setInterval定时器</title>
+</head>
+
+<body>
+    <button class="begin">点击开始</button>
+    <button class="stop">点击停止</button>
+    <script>
+        var begin = document.querySelector('.begin');
+        var stop = document.querySelector('.stop');
+        var timer = null; // 全局变量，不能声明在函数内部，否则stop无法访问，  null是一个空对象
+        begin.addEventListener('click', function() {
+            timer = setInterval(function() {
+                console.log('continue');
+            }, 1000);
+        });
+        stop.addEventListener('click', function() {
+            clearInterval(timer); // 括号里填定时器ID
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器之setTimeout</title>
+</head>
+
+<body>
+    <img src="images/ad.jpg" alt="">
+    <script>
+        // setTimeout
+        // 语法规范： window.setTimeout(调用函数， 延迟时间);
+        // 1.window可以省略
+        // 2.延迟时间的单位是毫秒  延迟时间可以省略，默认为0
+        // 3.函数调用可以直接写函数、或者函数名 or'函数名（）',推荐前两种
+        // 4.因为定时器可能有很多，常常给定时器赋值一个标识符（名字）
+        // setTimeout(function() {
+        //     console.log(123);
+        // }, 1000);
+        function callback() { // 这个函数也称为回调函数
+            console.log('fff');
+        };
+        setTimeout(callback, 2000);
+        var time1 = setTimeout(callback, 5000);
+        var timer2 = setTimeout(callback, 7000);
+
+        // 定时关闭广告、
+        var ad = document.querySelector('img');
+        setTimeout(function() {
+            ad.style.display = 'none';
+        }, 5000);
+    </script>
+</body>
+
+</html>

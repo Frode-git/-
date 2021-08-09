@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除setTimeout定时器</title>
+</head>
+
+<body>
+    <button>点击阻止弹出</button>
+    <script>
+        // 停止setTimeout计时器  window.clearTimeout(定时器ID)  window 同理可以省略
+        var btn = document.querySelector('button');
+        var timer = setTimeout(function() {
+            alert('已弹出！');
+        }, 5000);
+        btn.addEventListener('click', function() {
+            clearTimeout(timer);
+        });
+    </script>
+</body>
+
+</html>

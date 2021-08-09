@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js执行机制</title>
+</head>
+
+<body>
+    <script>
+        console.log(1);
+        setTimeout(function() {
+            console.log(2);
+        }, 1000);
+        console.log(3);
+        // 发现输出顺序为 132
+        // 这是由于js的执行机制问题  js中分为同步任务和异步任务   同步：执行顺序与任务顺序一致、同步
+        // 一般而言，异步任务有以下三类：普通事件：如click、resize等   资源加载：如load、error等   定时器：包括setInterval、setTimeout
+        // 先执行主线程执行栈中的同步任务   异步任务放入任务队列（消息队列）中
+        // 主线程执行栈中的同步任务全部执行完后，系统依次读取任务队列中的异步任务，放入主线程执行栈中执行
+
+        // 异步任务并不是直接进入任务列表，而是经过异步进程处理
+        // 比如：click事件，不发生点击事件，异步进程处理不会把click任务放入任务列表等待
+        // 由于主线程不断地重复获得任务、执行任务、再次获得任务、再执行，所以这种机制被称为事件循环（event loop）
+    </script>
+</body>
+
+</html>

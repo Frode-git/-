@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>发送验证码框</title>
+</head>
+
+<body>
+    手机号码：<input type="text"> <button>发送验证码</button>
+    <script>
+        // 获取元素
+        var btn = document.querySelector('button');
+        // 分析：点击按钮后，被禁用 disabled 设为true
+        // 同时，按钮内的信息也要同步更新 设置定时器
+        // 由于是倒计时，可设置一个变量，使其递减
+        // 时间归零后，要复原按钮
+        var time = 3;
+        btn.addEventListener('click', function() {
+            this.disabled = true;
+            var timer = setInterval(function() {
+                if (time == 0) {
+                    btn.disabled = false;
+                    time = 3;
+                    btn.innerHTML = '发送验证码';
+                    clearInterval(timer); // 记得清楚定时器，不然一直执行
+                } else {
+                    btn.innerHTML = '' + time + '秒后可再次发送';
+                    time--;
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>
