@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝对定位盒子居中对齐</title>
+    <style>
+        /* 加了绝对定位的盒子，不能通过margin： 0 auto；水平居中 */
+        /* left：50%；  margin-left： -宽度一半； */
+        /* 垂直居中同理，改成高度即可 */
+        
+        .box {
+            position: absolute;
+            /* margin: auto; */
+            left: 50%;
+            margin-left: -100px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+</body>
+
+</html>

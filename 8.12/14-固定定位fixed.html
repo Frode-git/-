@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>固定定位</title>
+    <style>
+        /* 固定定位，以浏览器可视区为准定位  跟父元素没有任何关系   不随着滚动条滚动    不占有原先位置（脱标） */
+        
+        .dj {
+            position: fixed;
+            top: 100px;
+            right: 40px;
+        }
+        /* 固定定位小技巧：使固定定位版块在版心右侧，随着放大和缩小，终止挨着版心 */
+        /* 固定定位盒子：left设置50%  然后margin-left: 版心一半，即靠右挨着版心 */
+        
+        .w {
+            margin: 0 auto;
+            width: 800px;
+            height: 1400px;
+            background-color: pink;
+        }
+        
+        .follow {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: 400px;
+            width: 50px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dj">
+        <img src="images/pvp.png" alt="">
+    </div>
+    <div class="follow"></div>
+    <div class="w">
+    </div>
+</body>
+
+</html>

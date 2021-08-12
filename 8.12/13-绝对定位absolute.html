@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝对定位</title>
+    <style>
+        /* 没有父盒子 或者 父盒子没有定位（相对定位、绝对定位和固定定位），则以浏览器为准定位 */
+        /* 若存在多个盒子嵌套，父盒子没有定位，则以最近一级的有定位的祖元素为参考点 */
+        /* 不再占有原先位置（脱标） */
+        
+        .box {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        .son {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+
+</html>

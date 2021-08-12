@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位的叠放顺序</title>
+    <style>
+        /* 定位叠放次序：z-index： 值；   值越大，盒子越靠上，可以是正整数，0，负整数，默认为auto；   如果属性值相同，则按照书写顺序，后来居上；   只有定位的盒子才具有此属性 */
+        
+        .box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            z-index: 4;
+        }
+        
+        .box2 {
+            top: 50px;
+            left: 50px;
+            z-index: 1;
+            background-color: skyblue;
+        }
+        
+        .box3 {
+            top: 100px;
+            left: 100px;
+            z-index: 2;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+</body>
+
+</html>
