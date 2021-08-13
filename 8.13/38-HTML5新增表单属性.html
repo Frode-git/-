@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5新增表单属性</title>
+    <style>
+        /* 修改提示信息样式 */
+        
+        input::placeholder {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- required="required"拥有该属性的内容不能为空   placeholder="提示信息"  autofocus="autofocus"页面加载完成，自动聚焦到指定表单 -->
+    <!-- autocomplete="on/off" on表示打开，记录已提交的信息，必须有name名  默认为打开，但是不安全，可手动关闭 -->
+    <!-- multiple提交多文件  原先只能提交一个文件，设置此属性后，可提交多问价 -->
+    <form action="">
+        <input type="search" name="sear" required="required" placeholder="提示信息" autofocus="autofocus" autocomplete="off">
+        <input type="file" name="" id="" multiple="multiple">
+        <input type="submit" value="提交">
+    </form>
+</body>
+
+</html>

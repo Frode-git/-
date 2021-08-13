@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三角优化</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .box {
+            width: 0;
+            height: 0;
+            /* top大于right从而将right挤成直角三角形 */
+            border-top: 100px solid transparent;
+            border-right: 50px solid skyblue;
+            /* 只要右边的三角 */
+            border-bottom: 0 solid purple;
+            border-left: 0 solid blue;
+        }
+        
+        .price {
+            margin: 100px auto;
+            width: 160px;
+            height: 24px;
+            border: 1px solid red;
+            line-height: 24px;
+        }
+        
+        .price .now {
+            position: relative;
+            float: left;
+            width: 90px;
+            height: 100%;
+            background-color: red;
+            text-align: center;
+            font-weight: 700;
+            color: #fff;
+            margin-right: 5px;
+        }
+        
+        .price .now i {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-color: transparent #fff transparent transparent;
+            border-style: solid;
+            border-width: 24px 10px 0 0;
+        }
+        
+        .price .past {
+            font-size: 14px;
+            text-decoration: line-through;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="price">
+        <span class="now">
+            ￥1999
+            <i></i>
+        </span>
+        <span class="past">￥5999</span>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片底侧空白缝隙解决</title>
+    <style>
+        .box {
+            /* 发现图片底侧有缝隙，这是因为，图片标签为行内块元素，伴有vertical-align属性，默认为基线对齐 */
+            border: 1px solid pink;
+        }
+        
+        img {
+            /* 解决方案1 bottom top middle都可*/
+            /* vertical-align: bottom; */
+            /* 解决方案2 */
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="images/pvp.png" alt="">
+    </div>
+</body>
+
+</html>

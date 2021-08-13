@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三角制作</title>
+    <style>
+        .box1 {
+            /* 当盒子没有宽度和高度的时候，设置边框，其本质就是三角形 */
+            width: 0;
+            height: 0;
+            /* border: 10px solid pink; */
+            /* 这两句话是为了照顾低版本浏览器（兼容性） */
+            font-size: 0;
+            line-height: 0;
+            border-top: 10px solid pink;
+            border-right: 10px solid skyblue;
+            border-bottom: 10px solid red;
+            border-left: 10px solid green;
+        }
+        
+        .box2 {
+            /* 制作一个三角 */
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-bottom: 10px solid pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+
+</html>

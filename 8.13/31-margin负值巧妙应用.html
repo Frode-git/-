@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin负值巧妙应用</title>
+    <style>
+        ul li {
+            position: relative;
+            float: left;
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            /* 由于浮动，中间接触的盒子，边框合并变粗 */
+            border: 1px solid red;
+            /* 设置负值margin使得中间边框重合达到不变粗 */
+            margin-left: -1px;
+            background-color: pink;
+        }
+        
+        ul li:hover {
+            /* 鼠标经过，边框变色 */
+            border: 1px solid skyblue;
+            /* 发现中间的盒子右边框不变色，因为被右边盒子盖住了 */
+            /* 解决方案1:没有定位，添加相对定位，可以压住其他盒子 */
+            /* position: relative; */
+            /* 解决方案2：若有定位，可设置z-index */
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精灵图</title>
+    <style>
+        /* 精灵图：将所有背景小图片放在一张大图片上，使用时，设置背景为这张大图片，通过background-position找到目标小背景 */
+        
+        .box {
+            width: 56px;
+            height: 54px;
+            background: url(images/sprites.png) -185px -1px no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

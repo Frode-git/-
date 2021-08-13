@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5新增视频标签</title>
+    <style>
+        /* 可设置video的宽度和高度 */
+        
+        video {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- src视频路径  autoplay="autoplay"自动播放，chrome浏览器，需要设置muted静音播放，才能实现自动播放 -->
+    <!-- controls="controls"显示播放控件   poster="路径"当视频没加载完时，显示一个图片  loop="loop"循环播放 -->
+    <video src="video/mi.mp4" autoplay="autoplay" muted="muted" controls="controls" poster="video/mi9.jpg" loop="loop"></video>
+</body>
+
+</html>
