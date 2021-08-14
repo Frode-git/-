@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素偏移量offset系列</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .father {
+            position: relative;
+            margin: 100px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        .son {
+            margin-left: 50px;
+            width: 50px;
+            height: 50px;
+            background-color: skyblue;
+        }
+        
+        .w {
+            margin: 100px auto;
+            border: 15px solid red;
+            padding: 20px;
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <div class="w"></div>
+    <script>
+        // offset系列
+        // 1.得到元素的偏移（位置）  不带单位      offsetLeft offsetTop    返回元素相对有定位的父元素的左方偏移和上方偏移
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        console.log(father.offsetLeft);
+        console.log(father.offsetTop);
+        console.log(son.offsetLeft); // 150 因为father没有定位，以body为准   father设置定位后，50
+
+        // 2.返回自身大小(包含border、padding)   offsetWidth offsetHeight
+        var w = document.querySelector('.w');
+        console.log(w.offsetWidth);
+        console.log(w.offsetHeight);
+
+        // 3.返回带有定位的父元素,如果父元素都没有定位，则返回body  offsetParent
+        console.log(son.offsetParent);
+    </script>
+</body>
+
+</html>

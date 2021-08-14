@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取鼠标在盒子内的坐标</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            margin: 100px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 点击盒子，得到鼠标在盒子内的坐标
+        // 可以先获取鼠标在页面上的坐标
+        // 再获取盒子距离页面左、上距离
+        // 二者作差，即为鼠标在盒子内的坐标
+        // 实际中，鼠标经过时，即得到坐标  鼠标移动事件mousemove
+        var div = document.querySelector('div');
+        div.addEventListener('mousemove', function(e) {
+            // console.log(div.offsetLeft);
+            // console.log(div.offsetTop);
+            // console.log(e.pageX);
+            // console.log(e.pageY);
+            div.innerHTML = 'x：' + (e.pageX - div.offsetLeft) + ' y:' + (e.pageY - div.offsetTop) + '';
+        });
+    </script>
+</body>
+
+</html>

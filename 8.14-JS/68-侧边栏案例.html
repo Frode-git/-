@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>侧边栏案例</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .w {
+            width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+        
+        .header {
+            height: 200px;
+            background-color: pink;
+        }
+        
+        .banner {
+            height: 500px;
+            background-color: purple;
+        }
+        
+        .aside {
+            position: absolute;
+            margin-left: 600px;
+            left: 50%;
+            top: 400px;
+            width: 40px;
+            height: 100px;
+            background-color: pink;
+        }
+        
+        .aside .goback {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .main {
+            height: 1500px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="aside">
+        <span class="goback"><a href="#" >回到顶部</a></span>
+    </div>
+    <div class="header w"></div>
+    <div class="banner w"></div>
+    <div class="main w"></div>
+    <script>
+        // 获取元素
+        var header = document.querySelector('.header');
+        var banner = document.querySelector('.banner');
+        var aside = document.querySelector('.aside');
+        var main = document.querySelector('.main');
+        var goback = document.querySelector('.goback');
+        // 给整个页面添加滚动事件
+        // 获取页面卷去部分 window.pageYOffset    获取元素卷去部分  element.scrollTop
+        // banner距离顶端值
+        var bannerTop = banner.offsetTop;
+        // aside固定后，top值
+        var asideTop = aside.offsetTop - bannerTop;
+        // main距离顶端值
+        var mainTop = main.offsetTop;
+        document.addEventListener('scroll', function() {
+            if (window.pageYOffset >= bannerTop) {
+                aside.style.position = 'fixed';
+                aside.style.top = asideTop + 'px';
+            } else {
+                aside.style.position = 'absolute';
+                aside.style.top = '400px';
+            }
+            // 滚动到main，显示回到顶部
+            if (window.pageYOffset >= mainTop) {
+                goback.style.display = 'block';
+            } else {
+                goback.style.display = 'none';
+            }
+        })
+    </script>
+</body>
+
+</html>

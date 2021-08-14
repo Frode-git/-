@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片放大效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            position: relative;
+            top: 50px;
+            left: 50px;
+            margin: 0;
+            width: 450px;
+            height: 450px;
+            border: 1px solid #ccc;
+        }
+        
+        .box img {
+            position: absolute;
+        }
+        
+        .box .mask {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            background-color: #FFEFA7;
+            opacity: .5;
+            cursor: move;
+        }
+        
+        .box .big {
+            display: none;
+            position: absolute;
+            overflow: hidden;
+            left: 480px;
+            top: 80px;
+            width: 400px;
+            height: 400px;
+            border: 1px solid #ccc;
+        }
+        
+        .box .big img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="images/jd.jpg" alt="">
+        <div class="mask"></div>
+        <div class="big">
+            <img src="images/jd(2).jpg" alt="" class="bigImg">
+        </div>
+    </div>
+
+    <script>
+        var mask = document.querySelector('.mask');
+        var big = document.querySelector('.big');
+        var box = document.querySelector('.box');
+        var bigImg = document.querySelector('.bigImg');
+        // 1. 鼠标经过图片，显示遮盖层和放大图  鼠标离开，隐藏
+        box.addEventListener('mouseover', function() {
+            mask.style.display = 'block';
+            big.style.display = 'block';
+        });
+        box.addEventListener('mouseout', function() {
+            mask.style.display = 'none';
+            big.style.display = 'none';
+        });
+        // 2.鼠标移动，遮盖层跟随
+        // 鼠标坐标减去盒子坐标，为鼠标在盒子内的距离，将此坐标给遮盖层   然后减去遮盖层长宽的一半，即可使得鼠标在遮盖层中间
+        // 将遮盖层限制在框框内  left  top < 0 强制为0
+        box.addEventListener('mousemove', function(e) {
+            var x = e.pageX - box.offsetLeft - mask.offsetWidth / 2;
+            var y = e.pageY - box.offsetTop - mask.offsetHeight / 2;
+            var xMax = box.offsetWidth - mask.offsetWidth;
+            var yMax = box.offsetHeight - mask.offsetHeight;
+            if (x <= 0) {
+                x = 0;
+            } else if (x >= xMax) {
+                x = xMax;
+            } else {
+                x = x;
+            }
+
+            if (y <= 0) {
+                y = 0;
+            } else if (y >= yMax) {
+                y = yMax;
+            } else {
+                y = y;
+            }
+            // 切记！！！offset返回的值不带单位
+            mask.style.left = x + 'px';
+            mask.style.top = y + 'px';
+            // 3. 放大图片跟随显示 
+            // 大图片和原图  根据移动比例实现跟随效果    原图移动距离 / 原图最大移动距离  =  大图移动距离 / 大图最大移动距离
+            var xImg = x * big.offsetWidth / xMax;
+            var yImg = y * big.offsetHeight / yMax;
+            bigImg.style.left = -xImg + 'px';
+            bigImg.style.top = -yImg + 'px';
+        })
+    </script>
+</body>
+
+</html>

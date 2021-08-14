@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll系列</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 10px solid red;
+            padding: 20px;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出内容超出</div>
+    <script>
+        // scroll与client类似，返回值不包含边框
+        var div = document.querySelector('div');
+        console.log(div.scrollWidth);
+        // scrollTop 返回被卷去的上侧距离  （当内容超出盒子时，拖动滚动条，上面的内容会被卷去（消失），scrollTop值就是这个距离）
+        // scrollLeft同理
+        // scroll事件，拖动滚动条触发
+        div.addEventListener('scroll', function() {
+            console.log(div.scrollTop);
+        })
+    </script>
+</body>
+
+</html>
