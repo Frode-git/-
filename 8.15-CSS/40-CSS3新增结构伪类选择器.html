@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3新增结构伪类选择器</title>
+    <style>
+        /* 结构伪类选择器主要根据文档结构来选择元素，常用于根据父级选择器里面的子元素 */
+        /* E:first-child 匹配父元素中第一个子元素E   E:last-child  匹配父元素中最后一个子元素E  E:nth-child(n)  匹配父元素中第n个子元素E */
+        
+        ul li:first-child {
+            background-color: pink;
+        }
+        
+        ul li:last-child {
+            background-color: pink;
+        }
+        
+        ul li:nth-child(5) {
+            background-color: skyblue;
+        }
+        /* E:nth-child(n)  里面的n除了可以是数字，还可以是关键字 如even偶数  odd奇数 从而实现多选 */
+        
+        ul li:nth-child(even) {
+            background-color: purple;
+        }
+        
+        ul li:nth-child(odd) {
+            background-color: red;
+        }
+        /* E:nth-child(n)  选择所有的子元素  里面必须是n  从0开始，依次加1  由于没有第0个元素，自动忽略（超出的同理自动忽略） */
+        
+        ul li:nth-child(n) {
+            background-color: pink;
+        }
+        /* n还可以是公式   2n：偶数   5n：5的倍数   n+5:从第五个开始往后    -n+5：前五个 */
+        /* E:nth-of-type()  这种与  E:nth-child()  区别之处在于，后者给所有的子盒子排序  执行 先看:nth-child()  再看E  即只能从第一个开始 */
+        /* 而前者，给所有的指定子盒子排序   执行 先看E  再看:nth-of-type() 这样，选择指定的元素 */
+        
+        section div:nth-child(1) {
+            /* 权重 1+1+10 */
+            /* 发现无法选中 因为第一个不是div */
+            background-color: skyblue;
+        }
+        
+        section div:nth-of-type(1) {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <section>
+        <p>1</p>
+        <div>2</div>
+        <div>3</div>
+    </section>
+</body>
+
+</html>

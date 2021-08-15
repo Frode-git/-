@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3新增伪元素选择器</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        div::before {
+            content: 'ss';
+        }
+        /* 伪元素选择器： 利用CSS创建新标签元素，::before 在元素内部的前面插入内容  ::after  在元素内部的后面插入内容 */
+        /* before 和after创建一个元素，属于行内元素   新创建的这个元素，在文档树中是找不到的，因此称为伪元素 */
+        /* 必须有content属性  权重为1 */
+        
+        div::after {
+            /* 权重：1+1 */
+            content: 'hh';
+        }
+    </style>
+</head>
+
+<body>
+    <div>gg</div>
+</body>
+
+</html>

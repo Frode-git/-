@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪元素使用场景之字体图标</title>
+    <style>
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?1erwuc');
+            src: url('fonts/icomoon.eot?1erwuc#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?1erwuc') format('truetype'), url('fonts/icomoon.woff?1erwuc') format('woff'), url('fonts/icomoon.svg?1erwuc#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+        
+        div {
+            position: relative;
+            width: 200px;
+            height: 35px;
+            background-color: pink;
+            border: 1px solid red;
+        }
+        
+        div::after {
+            font-family: 'icomoon';
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            color: red;
+            font-size: 18px;
+            /* content: '';  除了用相应的图标，还可以使用其对应的编码 需要转义 */
+            content: '\e900';
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

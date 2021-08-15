@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3盒子模型</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* 这样就不会有撑开盒子情况了 */
+            box-sizing: border-box;
+        }
+        
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 10px solid red;
+            padding: 10px;
+            /* box-sizing: content-box  默认的  盒子大小=width + padding + border */
+            /* box-sizing: content-box; */
+        }
+        
+        p {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 10px solid red;
+            padding: 10px;
+            /* box-sizing: border-box  盒子大小= width */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <p></p>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3图片模糊处理</title>
+    <style>
+        /* CSS3滤镜 filter  filter: 函数名() */
+        
+        img {
+            /* blur() 模糊处理函数，里面的参数越大，越模糊 单位px */
+            filter: blur(10px);
+        }
+        
+        img:hover {
+            filter: blur(0);
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/pvp.png" alt="">
+</body>
+
+</html>
