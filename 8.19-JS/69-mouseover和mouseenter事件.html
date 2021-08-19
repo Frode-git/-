@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouseover和mouseenter事件</title>
+    <style>
+        .father {
+            margin: 100px auto;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        father.addEventListener('mouseenter', function () {
+            console.log(
+                11); // 发现，事件为mouseover时，经过父盒子和子盒子都会触发事件   而事件为mouseenter时，只有经过父盒子本身才会触发事件，这是因为，mouseenter事件没有冒泡
+            // 跟mouseenter搭配的还有 鼠标离开事件 mouseleave，同样不会冒泡
+        })
+    </script>
+</body>
+
+</html>

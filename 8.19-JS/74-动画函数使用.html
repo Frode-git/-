@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画函数使用</title>
+    <style>
+        .sliderBar {
+            position: fixed;
+            bottom: 300px;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            background-color: #fff;
+        }
+
+        .con {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 40px;
+            background-color: pink;
+            z-index: -999;
+        }
+    </style>
+    <script src="animate.js"></script>
+</head>
+
+<body>
+    <div class="sliderBar">
+        <span> ← </span>
+        <div class="con">问题反馈</div>
+    </div>
+    <script>
+        var sliderBar = document.querySelector('.sliderBar');
+        var con = document.querySelector('.con');
+        // 鼠标经过盒子，con移出来，并将←改为→
+        sliderBar.addEventListener('mouseenter', function () {
+            animate(con, -160, function () {
+                sliderBar.children[0].innerHTML = ' → ';
+            });
+        });
+        // 鼠标离开盒子，con移进去，并将→改回←
+        sliderBar.addEventListener('mouseleave', function () {
+            animate(con, 0, function () {
+                sliderBar.children[0].innerHTML = ' ← ';
+            });
+        })
+    </script>
+</body>
+
+</html>

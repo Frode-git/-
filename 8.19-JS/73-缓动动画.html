@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>缓动动画</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        span {
+            position: absolute;
+            margin-top: 200px;
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <span></span>
+    <button class="btn500">点击按钮，蓝色盒子移动至500px</button>
+    <button class="btn800">点击按钮，蓝色盒子移动至800px</button>
+    <script>
+        // 缓动动画原理：让盒子每次移动的距离（步长）逐渐变小，移动速度就会慢慢落下来
+        // 核心算法：（目标位置-当前位置） / 10
+        // 例如：初始：目标-100px 当前-0   第一次移动(100 - 0) / 10   第二次移动(100 - 10) / 10  第三次移动(100 - 19) / 10 这样步长逐渐变小
+        var sp = document.querySelector('span');
+        var btn500 = document.querySelector('.btn500');
+        var btn800 = document.querySelector('.btn800');
+        // 用函数封装动画效果
+        // 需求：动画停止时，改变盒子颜色，此时应该先移动，然后改变颜色，  因此需要添加一个回调函数，将这个函数作为参数传递给动画函数
+        function animate(obj, target, callback) {
+            clearInterval(obj.timer); // 每次调用动画函数时，先将对象中的定时器删掉，这样就能保证只有一个定时器
+            obj.timer = setInterval(function () {
+                var step = (target - obj.offsetLeft) / 10; // 每次都要计算步长  
+                // 发现，停止时，所在位置，并不是目标位置  这是因为，含有小数时，会出现偏差问题，因此需要转化为整数
+                // 转化为整数，又有一个问题，整数应该往大了取整，负数应该往小了取整，8.1，取9，理应在8.1，取8则往回跑了，-8.1取-9即往小取
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                    if (callback) { // 有该实参传递，则自动调用
+                        callback(); // 回调函数一定要在盒子停止时再调用  
+                    }
+                }
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 15);
+        };
+        btn500.addEventListener('click', function () {
+            animate(sp, 500);
+            // 发现，点击的次数越多，该盒子移动的越快，这是因为，每点击一次就添加了一个定时器，理应只有一个
+        });
+        btn800.addEventListener('click', function () {
+            animate(sp, 800, function () {
+                sp.style.backgroundColor = 'pink';
+            });
+            // 发现，点击的次数越多，该盒子移动的越快，这是因为，每点击一次就添加了一个定时器，理应只有一个
+        });
+    </script>
+</body>
+
+</html>

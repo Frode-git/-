@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不同对象添加不同定时器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            margin-top: 50px;
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        span {
+            position: absolute;
+            margin-top: 200px;
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <span></span>
+    <button>点击按钮，蓝色盒子移动</button>
+    <script>
+        // 在对象中，常常通过赋值的形式，给对象添加属性
+        // var obj = {};
+        // obj.name = 'juli';
+        // 同理，给不同的对象添加定时器时，通过赋值的形式添加是极好的，这样，避免了，每次添加定时器都要var，占据内存资源
+        var box = document.querySelector('.box');
+        var sp = document.querySelector('span');
+        var btn = document.querySelector('button');
+        // 用函数封装动画效果
+        function animate(obj, target) {
+            clearInterval(obj.timer); // 每次调用动画函数时，先将对象中的定时器删掉，这样就能保证只有一个定时器
+            obj.timer = setInterval(function () {
+                if (obj.offsetLeft >= target) {
+                    clearInterval(obj.timer);
+                }
+                obj.style.left = obj.offsetLeft + 1 + 'px';
+            }, 30);
+        };
+        animate(box, 400);
+        btn.addEventListener('click', function () {
+            animate(sp, 200);
+            // 发现，点击的次数越多，该盒子移动的越快，这是因为，每点击一次就添加了一个定时器，理应只有一个
+        })
+    </script>
+</body>
+
+</html>
