@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if指令</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="切换显示状态" @click="changeIsShow">
+        <p v-if="isShow">小cc</p>
+        <p v-show="isShow">小cc</p>
+        <p v-if="temperature>=35">热死啦</p>
+    </div>
+    <!-- 引入开发版本的vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        // v-if 与 v-show 都是根据表达式的真假，显示隐藏元素，不同之处在于，v-show改变的是display样式，而v-if是直接操作DOM树，对元素进行删改，对性能消耗更大 因此，频繁显示隐藏，采用v-show
+        var app = new Vue({
+            el: '#app',
+            data: {
+                isShow: false,
+                temperature: 34
+            },
+            methods: {
+                changeIsShow: function () {
+                    this.isShow = !this.isShow;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

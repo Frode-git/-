@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-on指令</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="绑定事件" v-on:click="alt">
+        <input type="button" value="v-on简写" @click="alt">
+        <input type="button" value="双击事件" @dblclick="doIt">
+        <h2 @click="changeFood"> {{ food }} </h2>
+        <!-- v-on简写，即，用@代替v-on: -->
+    </div>
+    <!-- 引入开发版本的vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                food: '番茄炒鸡蛋'
+            },
+            // 方法都写在methods中
+            methods: {
+                alt: function () {
+                    alert('v-on：给元素绑定事件');
+                },
+                doIt: function () {
+                    alert('doIt');
+                },
+                // 方法内部，可以通过this关键字，访问定义在data中的数据
+                changeFood: function () {
+                    this.food += '好好吃';
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

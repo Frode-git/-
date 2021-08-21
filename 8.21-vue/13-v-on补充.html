@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-on补充</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="函数调用传参" @click="doIt(555, '老表')">
+        <input type="text" name="" id="" @keyup.enter="sayHi">
+    </div>
+    <!-- 引入开发版本的vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        // 事件绑定的方法写成函数调用的形式，可以传入自定义参数 定义方法时，需要定义形参来接收传入的实参
+        // 事件的后面跟上 .修饰符 可以对事件进行限制   例如: @keyup.enter 敲下回车键，弹起时触发事件 
+        // 事件修饰符有很多种
+        var app = new Vue({
+            el: '#app',
+            methods: {
+                doIt: function (p1, p2) {
+                    console.log('doIt');
+                    console.log(p1);
+                    console.log(p2);
+                },
+                sayHi: function () {
+                    alert('Hi');
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-text指令</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-text指令的作用是，设置标签的内容 -->
+        <!-- 默认写法:第一二种，会替换全部内容 -->
+        <!-- 第三种：差值表达式{{}}，可以替换指定内容 -->
+        <h2 v-text='message + "!"'> 多余的话语 </h2>
+        <h2 v-text='info + "!"'> 多余的话语 </h2>
+        <h2> {{ message + "!" }} 多余的话语 </h2>
+    </div>
+    <!-- 引入开发版本的vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好',
+                info: '巴比酷'
+            }
+        })
+    </script>
+</body>
+
+</html>

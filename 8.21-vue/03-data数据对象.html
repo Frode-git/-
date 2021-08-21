@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data数据对象</title>
+</head>
+
+<body>
+    <div id="app">
+        {{ message }}
+        <h2> {{ people.name }} {{ people.phone}} </h2>
+        <ul>
+            <li> {{ hobbies[0] }} </li>
+            <li> {{ hobbies[1] }} </li>
+            <li> {{ hobbies[2] }} </li>
+        </ul>
+    </div>
+    <!-- 引入开发版本vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        // 生一个vue实例
+        var app = new Vue({
+            el: '#app',
+            // vue中用到的数据，放在data中
+            data: {
+                message: '你好！',
+                // data数据对象中，可以写入复杂数据类型
+                people: {
+                    name: 'Frode',
+                    phone: '112'
+                },
+                hobbies: ['篮球', '斗地主', '睡觉', '发呆']
+            }
+        })
+    </script>
+</body>
+
+</html>

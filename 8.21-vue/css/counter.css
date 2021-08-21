@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.counter {
+    position: relative;
+    margin: 100px auto;
+    width: 150px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.counter input {
+    width: 50px;
+    height: 30px;
+    border: 1px solid transparent;
+    border-radius: 10px 0 0 10px;
+    background-color: #C7C7C7;
+    font-size: 18px;
+    color: #A6292D;
+}
+
+.counter input:nth-of-type(1) {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.counter span {
+    display: inline-block;
+    margin: 0 50px;
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.counter input:nth-of-type(2) {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 0 10px 10px 0;
+}
