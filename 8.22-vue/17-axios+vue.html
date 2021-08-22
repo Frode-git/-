@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios+vue</title>
+    <!-- 官方提供的axios在线地址 (功能强大的网络请求库)  必须先导入再使用 -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="获取笑话" @click="getJoke"> <br>
+        {{ joke }}
+    </div>
+    <!-- 引入开发版本的vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        /*  
+            接口1： 随机笑话
+            请求地址：https://autumnfish.cn/api/joke
+            请求方法：get
+            请求参数：无
+            响应内容：随机笑话
+         */
+        var app = new Vue({
+            el: '#app',
+            data: {
+                joke: '好好笑的笑话'
+            },
+            methods: {
+                getJoke: function () {
+                    var that = this;
+                    axios.get("https://autumnfish.cn/api/joke").then(function (response) {
+                        // console.log(response); 发现数据在data中
+                        // console.log(response.data); 通过此操作，可以直接获取返回结果
+                        // console.log(this.joke);  不能通过this访问，axios回调函数中的this已经改变，无法访问到data中的数据  但是我们可以通过“把this保存起来，回调函数中直接使用保存了的this即可
+                        // 这也说明了，本地应用和网络应用最大区别在于：改变了数据来源
+                        // console.log(that.joke);
+                        that.joke = response.data; // 此操作，则将返回的数据直接传给data，并渲染到页面上
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
