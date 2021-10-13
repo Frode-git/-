@@ -10,6 +10,8 @@
 						class="name"
 						name="userId"
 						maxlength="25"
+						v-model="userName"
+						:disabled="editAllow"
 					/>
 				</li>
 				<li>
@@ -21,6 +23,8 @@
 							name="sex"
 							id="sexMan"
 							maxlength="1"
+							checked="checked"
+							:disabled="editAllow"
 							style="vertical-align: middle; margin-right: 10px"
 						/><label for="sexWom" style="margin-right: 5px"
 							>女</label
@@ -29,6 +33,7 @@
 							name="sex"
 							id="sexWom"
 							maxlength="1"
+							:disabled="editAllow"
 							style="vertical-align: middle"
 						/>
 					</div>
@@ -40,10 +45,17 @@
 						class="num"
 						name="userNum"
 						maxlength="25"
+						:disabled="editAllow"
+						v-model="num"
 					/>
 				</li>
 				<li>
-					<input type="submit" class="submit" value="保存" />
+					<button class="change" type="button" @click="changeInfo">
+						修改
+					</button>
+					<button class="save" type="button" @click="save">
+						保存
+					</button>
 				</li>
 			</ul>
 		</form>
@@ -53,6 +65,23 @@
 <script>
 	export default {
 		name: "info",
+		data() {
+			return {
+				userName: "微微",
+				num: "0122010880214",
+				editAllow: true,
+			};
+		},
+		methods: {
+			// 点击修改按钮，启动修改功能
+			changeInfo: function () {
+				this.editAllow = false;
+			},
+			// 点击保存按钮，禁用输入
+			save: function () {
+				this.editAllow = true;
+			},
+		},
 	};
 </script>
 
@@ -124,11 +153,12 @@
 		font-size: 24px;
 	}
 
-	.info ul li .submit {
+	.info ul li .save,
+	.info ul li .change {
 		position: absolute;
 		bottom: -45px;
-		left: 145px;
-		width: 100px;
+		left: 260px;
+		width: 70px;
 		height: 50px;
 		border-radius: 5px;
 		background-image: linear-gradient(
@@ -136,5 +166,9 @@
 			rgba(248, 196, 249, 0.66) 22.8%,
 			rgba(253, 122, 4, 0.15) 64.6%
 		);
+	}
+
+	.info ul li .change {
+		left: 65px;
 	}
 </style>
